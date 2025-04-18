@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recrutement - Infra Salama</title>
+    <meta
+      name="description"
+      content="Rejoignez l'équipe d'Infra Salama et contribuez à l'avenir de l'infrastructure informatique en Algérie"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Recrutement Page Specific CSS -->
+    <style>
+      /* Styles spécifiques à la page recrutement */
+      .recruitment-banner {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.85),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 80px;
+        color: #fff;
+        margin-top: 0;
+        position: relative;
+      }
+
+      .recruitment-banner h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .recruitment-banner p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .benefit-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-bottom: 4px solid transparent;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-10px);
+        border-bottom: 4px solid #0056b3;
+      }
+
+      .benefit-icon {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(0, 86, 179, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .benefit-icon i {
+        font-size: 30px;
+        color: #0056b3;
+      }
+
+      .benefit-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: #0056b3;
+      }
+
+      .job-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-left: 5px solid #0056b3;
+        margin-bottom: 30px;
+      }
+
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .job-card h3 {
+        color: #0056b3;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .job-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .job-details span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .job-responsibilities {
+        background-color: rgba(0, 86, 179, 0.05);
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+
+      .job-responsibilities h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        color: #0056b3;
+      }
+
+      .job-responsibilities ul {
+        padding-left: 20px;
+        margin-bottom: 0;
+      }
+
+      .job-responsibilities li {
+        margin-bottom: 5px;
+      }
+
+      .form-container {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .recruitment-form .form-label {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .recruitment-form .form-control,
+      .recruitment-form .form-select {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .recruitment-form .form-control:focus,
+      .recruitment-form .form-select:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 0.25rem rgba(0, 86, 179, 0.25);
+      }
+
+      .recruitment-form .btn-primary {
+        padding: 12px 30px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      .recruitment-stats {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.9),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: #fff;
+      }
+
+      .stat-box {
+        text-align: center;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        height: 100%;
+      }
+
+      .stat-box i {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      .stat-box h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .stat-box p {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+      }
+
+      .team-section {
+        padding: 80px 0;
+      }
+
+      .team-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .team-card:hover .team-img img {
+        transform: scale(1.1);
+      }
+
+      .team-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .team-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        color: #0056b3;
+      }
+
+      .team-info p {
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .team-social a {
+        width: 35px;
+        height: 35px;
+        background-color: #f5f5f5;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0056b3;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background-color: #0056b3;
+        color: #fff;
+      }
+
+      .values-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .value-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .value-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(0, 86, 179, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .value-icon i {
+        font-size: 35px;
+        color: #0056b3;
+      }
+
+      .value-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: #0056b3;
+      }
+
+      .cta-recruitment {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.9),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: #fff;
+        text-align: center;
+      }
+
+      .cta-recruitment h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-recruitment p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .btn-light-outline {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-light-outline:hover {
+        background-color: #fff;
+        color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="img/logoInfraSalama.png"
+              alt="Infra Salama Logo"
+              height="50"
+            />
+            Infra Salama
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Nos Solutions</a>
+              </li>
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="realisations.html">Réalisations</a>
+            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+              <!-- <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="temoignages.html">Témoignages</a>
+                    </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="recrutement.html">Recrutement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog / conseil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary devis-btn" href="devis.html"
+                  >Demander un devis</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Recruitment Banner -->
+    <section class="recruitment-banner">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <h1>Rejoignez Notre Équipe</h1>
+            <p>
+              Découvrez les opportunités de carrière chez Infra Salama et
+              contribuez à façonner l'avenir de l'infrastructure informatique en
+              Algérie
+            </p>
+            <a href="#openPositions" class="btn btn-light btn-lg"
+              >Voir les postes ouverts</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+              <h2>Nos Valeurs</h2>
+              <p>
+                Découvrez les principes qui guident notre entreprise et notre
+                équipe au quotidien
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Value 1 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3>Innovation</h3>
+              <p>
+                Nous encourageons la créativité et l'innovation pour développer
+                des solutions qui répondent aux défis technologiques actuels et
+                futurs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 2 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Intégrité</h3>
+              <p>
+                Nous agissons avec honnêteté, transparence et éthique dans
+                toutes nos interactions avec nos clients, partenaires et
+                employés.
+              </p>
+            </div>
+          </div>
+
+          <!-- Value 3 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="value-card">
+              <div class="value-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Collaboration</h3>
+              <p>
+                Nous croyons au pouvoir du travail d'équipe et de la
+                collaboration pour atteindre l'excellence et créer un impact
+                positif.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="why-join-us section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+              <h2>Pourquoi Rejoindre Infra Salama?</h2>
+              <p>
+                Découvrez les avantages de faire partie de notre équipe
+                dynamique et innovante
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Benefit 1 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Innovation Constante</h3>
+              <p>
+                Travaillez avec les technologies les plus récentes et participez
+                à des projets innovants qui façonnent l'avenir de
+                l'infrastructure informatique en Algérie.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Développement Professionnel</h3>
+              <p>
+                Bénéficiez de formations continues, de certifications
+                professionnelles et d'un plan de carrière personnalisé pour
+                développer vos compétences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Équipe Collaborative</h3>
+              <p>
+                Rejoignez une équipe passionnée et collaborative où chaque
+                membre est valorisé et où les idées sont encouragées et
+                respectées.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3>Équilibre Travail-Vie</h3>
+              <p>
+                Profitez d'horaires flexibles, de la possibilité de télétravail
+                et d'une culture d'entreprise qui valorise l'équilibre entre vie
+                professionnelle et personnelle.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Croissance Rapide</h3>
+              <p>
+                Faites partie d'une entreprise en pleine croissance, offrant de
+                nombreuses opportunités d'avancement et de développement de
+                carrière.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>Impact Positif</h3>
+              <p>
+                Contribuez à des projets qui ont un impact réel sur les
+                entreprises algériennes et participez au développement
+                technologique du pays.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="recruitment-stats">
+      <div class="container">
+        <div class="row">
+          <!-- Stat 1 -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-aos="fade-up">
+            <div class="stat-box">
+              <i class="fas fa-user-plus"></i>
+              <h3>5+</h3>
+              <p>Employés Passionnés</p>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stat-box">
+              <i class="fas fa-certificate"></i>
+              <h3>10+</h3>
+              <p>Certifications</p>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div
+            class="col-lg-3 col-md-6 mb-4 mb-lg-0"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stat-box">
+              <i class="fas fa-laptop-code"></i>
+              <h3>20+</h3>
+              <p>Technologies Maîtrisées</p>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stat-box">
+              <i class="fas fa-award"></i>
+              <h3>95%</h3>
+              <p>Taux de Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+              <h2>Rencontrez Notre Équipe</h2>
+              <p>
+                Découvrez les talents qui font d'Infra Salama une entreprise
+                exceptionnelle
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Team Member 1 -->
+          <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+            <div class="team-card">
+              <div class="team-img">
+                <img
+                  src="/placeholder.svg?height=300&width=300"
+                  alt="Karim Benali"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Karim Benali</h3>
+                <p>Directeur Technique</p>
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="team-card">
+              <div class="team-img">
+                <img
+                  src="/placeholder.svg?height=300&width=300"
+                  alt="Amina Hadj"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Amina Hadj</h3>
+                <p>Responsable RH</p>
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="team-card">
+              <div class="team-img">
+                <img
+                  src="/placeholder.svg?height=300&width=300"
+                  alt="Mohamed Cherif"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Mohamed Cherif</h3>
+                <p>Ingénieur Réseau Senior</p>
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div
+            class="col-lg-3 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="team-card">
+              <div class="team-img">
+                <img
+                  src="/placeholder.svg?height=300&width=300"
+                  alt="Leila Mansouri"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Leila Mansouri</h3>
+                <p>Spécialiste en Cybersécurité</p>
+                <div class="team-social">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Openings Section -->
+    <section
+      id="openPositions"
+      class="current-openings section-padding bg-light"
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+              <h2>Postes Ouverts</h2>
+              <p>
+                Découvrez nos opportunités d'emploi actuelles et trouvez le
+                poste qui correspond à vos compétences et aspirations
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Job 1 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up">
+            <div class="job-card">
+              <h3>Ingénieur Réseau Senior</h3>
+              <div class="job-details">
+                <span><i class="fas fa-map-marker-alt"></i> Oran</span>
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 3+ ans
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Nous recherchons un ingénieur réseau expérimenté pour concevoir,
+                mettre en œuvre et maintenir des infrastructures réseau
+                complexes pour nos clients. Le candidat idéal possède une solide
+                expérience dans la gestion de réseaux d'entreprise et des
+                certifications pertinentes (CCNP, CCNA).
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>
+                    Concevoir et déployer des solutions réseau évolutives et
+                    sécurisées
+                  </li>
+                  <li>
+                    Gérer et optimiser les infrastructures réseau existantes
+                  </li>
+                  <li>Résoudre les problèmes réseau complexes</li>
+                  <li>
+                    Collaborer avec les équipes de sécurité et de systèmes
+                  </li>
+                  <!-- <li>Former et encadrer les ingénieurs réseau juniors</li> -->
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="job-card">
+              <h3>Administrateur Systèmes, Réseaux & Sécurité</h3>
+              <div class="job-details">
+                <span><i class="fas fa-map-marker-alt"></i> Oran</span>
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 2+ ans
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Infra Salama recherche un Administrateur Systèmes & Réseaux pour
+                renforcer son équipe technique. Le poste consiste à participer
+                aux déploiements et à l’administration des infrastructures
+                réseau chez nos clients (écoles, mairies, universités), en
+                collaboration avec notre équipe d’ingénieurs. Le candidat idéal
+                possède une solide expérience en sécurité des réseaux et des
+                systèmes, ainsi que des certifications pertinentes (CCNA).
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>
+                    Participer à l’installation complète de parcs informatiques
+                    (serveurs, routeurs, switchs, points d’accès...)
+                  </li>
+                  <li>
+                    Configurer et maintenir des réseaux LAN, VLAN, routage et
+                    solutions d'accès sécurisé
+                  </li>
+                  <li>
+                    Collaborer avec l’équipe pour l’audit et l’optimisation des
+                    systèmes existants chez les clients
+                  </li>
+                  <li>
+                    Assurer la documentation technique des installations et
+                    configurations réalisées
+                  </li>
+                  <li>
+                    Fournir un support technique sur site et à distance en cas
+                    de besoin
+                  </li>
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="job-card">
+              <h3>Administrateur Systèmes, Réseaux & Sécurité</h3>
+              <div class="job-details">
+                <span><i class="fas fa-map-marker-alt"></i> Oran</span>
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 2+ ans
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Infra Salama recrute un Administrateur Systèmes, Réseaux &
+                Sécurité pour la gestion, l’optimisation et la sécurisation de
+                son infrastructure informatique interne. Vous travaillerez au
+                cœur de notre siège à Alger, avec une mission prioritaire
+                d’assurer la stabilité, la performance et la sécurité de notre
+                système d’information. Vous apporterez également un soutien
+                technique aux équipes sur le terrain lors des déploiements
+                clients. Le candidat idéal possède une solide expérience en
+                sécurité des réseaux et des systèmes, ainsi que des
+                certifications pertinentes (CCNA, comptIA security+).
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>
+                    Maintenir et améliorer l'infrastructure réseau et serveurs
+                    d'Infra Salama
+                  </li>
+                  <li>
+                    Mettre en œuvre des politiques de sécurité, de sauvegarde et
+                    de supervision
+                  </li>
+                  <li>
+                    Assurer la disponibilité des services internes (VPN,
+                    partages, messagerie, outils collaboratifs...)
+                  </li>
+                  <li>
+                    Participer au déploiement de solutions pour nos clients en
+                    soutien aux équipes projets
+                  </li>
+                  <li>
+                    Documenter les architectures, procédures et configurations
+                    internes
+                  </li>
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="job-card">
+              <h3>Technicien Support IT</h3>
+              <div class="job-details">
+                <span><i class="fas fa-map-marker-alt"></i> Oran</span>
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 1+ an
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Nous recherchons un technicien support IT pour fournir une
+                assistance technique de premier niveau à nos clients. Le
+                candidat idéal possède d'excellentes compétences en
+                communication et une solide connaissance des systèmes
+                informatiques (systèmes et réseaux). Nous prenons également des
+                stagiaires.
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>Répondre aux demandes d'assistance des clients</li>
+                  <li>Diagnostiquer et résoudre les problèmes techniques</li>
+                  <li>Installer et configurer des équipements informatiques</li>
+                  <li>Documenter les solutions et les procédures</li>
+                  <li>
+                    Escalader les problèmes complexes aux équipes spécialisées
+                  </li>
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="job-card">
+              <h3>Comptable (H/F)</h3>
+              <div class="job-details">
+                <span><i class="fas fa-map-marker-alt"></i> Oran</span>
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 3+ ans
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Infra Salama recherche un(e) comptable rigoureux(se) et
+                organisé(e) pour prendre en charge l’ensemble de la comptabilité
+                de l’entreprise. Vous serez responsable du suivi des opérations
+                financières, des déclarations fiscales et sociales, et de la
+                bonne tenue des comptes.
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>Saisir et contrôler les écritures comptables</li>
+                  <li>Gérer les factures, règlements et relances</li>
+                  <li>Assurer les déclarations fiscales et sociales</li>
+                  <li>Suivre les budgets et les rapports de gestion</li>
+                  <li>Collaborer avec les auditeurs et le cabinet fiscal</li>
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+
+          <!-- Job 5 -->
+          <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="job-card">
+              <h3>Directeur(trice) Marketing & Communication Digitale</h3>
+              <div class="job-details">
+                <span
+                  ><i class="fas fa-map-marker-alt"></i> Hybride (Alger ou
+                  Oran)</span
+                >
+                <span><i class="fas fa-briefcase"></i> Temps plein</span>
+                <span
+                  ><i class="fas fa-graduation-cap"></i> 3+ ans
+                  d'expérience</span
+                >
+              </div>
+              <p>
+                Nous recherchons un(e) Directeur(trice) Marketing &
+                Communication Digitale pour piloter la stratégie de visibilité
+                d’Infra Salama. Vous serez en charge de la gestion des réseaux
+                sociaux, de la création de contenu et de la mise en place de
+                campagnes publicitaires ciblées.
+              </p>
+              <div class="job-responsibilities">
+                <h4>Responsabilités:</h4>
+                <ul>
+                  <li>Définir et exécuter la stratégie marketing digitale</li>
+                  <li>Créer du contenu engageant (posts, vidéos, visuels)</li>
+                  <li>
+                    Gérer les réseaux sociaux (Facebook, LinkedIn, Instagram,
+                    etc.)
+                  </li>
+                  <li>Lancer et suivre des campagnes de publicité en ligne</li>
+                  <li>Analyser les performances et ajuster les actions</li>
+                </ul>
+              </div>
+              <a href="#applicationForm" class="btn btn-primary">Postuler</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-recruitment">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center" data-aos="fade-up">
+            <h2>Prêt à Rejoindre Notre Équipe?</h2>
+            <p>
+              Nous sommes toujours à la recherche de talents passionnés pour
+              rejoindre notre équipe dynamique. Même si vous ne trouvez pas de
+              poste correspondant à votre profil, n'hésitez pas à nous envoyer
+              votre candidature spontanée.
+            </p>
+            <div class="mt-4">
+              <a href="#applicationForm" class="btn btn-light btn-lg me-3"
+                >Postuler Maintenant</a
+              >
+              <a href="contact.php" class="btn btn-light-outline btn-lg"
+                >Nous Contacter</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="applicationForm" class="application-form section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+              <h2>Postuler Maintenant</h2>
+              <p>
+                Remplissez le formulaire ci-dessous pour soumettre votre
+                candidature. Nous examinerons votre profil et vous contacterons
+                si votre candidature correspond à nos besoins.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <div class="form-container">
+              <form
+                id="recruitmentForm"
+                class="recruitment-form"
+                method="POST"
+                action="config/process_application.php"
+                enctype="multipart/form-data"
+              >
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">Prénom *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      name="firstName"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Nom *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      name="lastName"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email *</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Téléphone *</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="position" class="form-label"
+                    >Poste Souhaité *</label
+                  >
+                  <select
+                    class="form-select"
+                    id="position"
+                    name="position"
+                    required
+                  >
+                    <option value="" selected disabled>
+                      Sélectionnez un poste
+                    </option>
+                    <option value="Ingénieur Réseau Senior">
+                      Ingénieur Réseau Senior
+                    </option>
+                    <option value="Administrateur Systèmes, Réseau & Sécurité">
+                      Administrateur Systèmes, Réseau & Sécurité
+                    </option>
+                    <option value="Technicien Support IT">
+                      Technicien Support IT
+                    </option>
+                    <option value="Comptable (H/F)">Comptable (H/F)</option>
+                    <option
+                      value="Directeur(trice) Marketing & Communication Digitale"
+                    >
+                      Directeur(trice) Marketing & Communication Digitale
+                    </option>
+                    <option value="Candidature Spontanée">
+                      Candidature Spontanée
+                    </option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="experience" class="form-label"
+                    >Années d'Expérience *</label
+                  >
+                  <select
+                    class="form-select"
+                    id="experience"
+                    name="experience"
+                    required
+                  >
+                    <option value="" selected disabled>Sélectionnez</option>
+                    <option value="0-1">0-1 an</option>
+                    <option value="1-2">1-2 ans</option>
+                    <option value="2-5">2-5 ans</option>
+                    <option value="5-10">5-10 ans</option>
+                    <option value="10+">Plus de 10 ans</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label for="resume" class="form-label"
+                    >CV (PDF, DOC, DOCX) *</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="resume"
+                    name="resume"
+                    accept=".pdf,.doc,.docx"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="coverLetter" class="form-label"
+                    >Lettre de Motivation</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="coverLetter"
+                    name="coverLetter"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="privacyConsent"
+                    name="privacyConsent"
+                    required
+                  />
+                  <label class="form-check-label" for="privacyConsent"
+                    >J'accepte que mes données personnelles soient traitées
+                    conformément à la politique de confidentialité d'Infra
+                    Salama. *</label
+                  >
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Soumettre ma Candidature
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <img
+              src="img/logo-white.png"
+              alt="Infra Salama Logo"
+              class="footer-logo mb-3"
+            />
+            <p>
+              Infra Salama est votre partenaire de confiance pour tous vos
+              besoins en infrastructure informatique. Nous offrons des solutions
+              innovantes et sécurisées pour les entreprises de toutes tailles.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Liens Rapides</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Nos Services</a></li>
+              <li><a href="realisations.html">Réalisations</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Nos Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#reseaux">Réseaux Informatiques</a></li>
+              <li>
+                <a href="services.html#securite">Sécurité Informatique</a>
+              </li>
+              <li><a href="services.html#serveurs">Serveurs & Stockage</a></li>
+              <li><a href="services.html#cloud">Solutions Cloud</a></li>
+              <li>
+                <a href="services.html#communication">Communication Unifiée</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-4 col-md-6">
+            <h5>Contactez-nous</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Rue des
+                Infrastructures, Alger, Algérie
+              </li>
+              <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+              <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+              <li>
+                <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="algerian-company">Entreprise 100% Algérienne</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <script src="js/form_validation.js"></script>
+  </body>
+</html>

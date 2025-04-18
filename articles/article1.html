@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titre de l'Article - Blog Infra Salama</title>
+  <meta
+    name="description"
+    content="Description de l'article pour le référencement" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Prism Syntax Highlighting -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../img/logoInfraSalama.png" alt="Infra Salama Logo" height="50" /> Infra Salama
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../services.html">Nos Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../recrutement.html">Recrutement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../blog.html">Blog / Conseils</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../devis.html">Demander un Devis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Banner -->
+  <section class="article-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <a href="../blog.html" class="back-to-blog"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+          <span class="article-category">Sécurité</span>
+          <h1>
+            5 erreurs courantes de sécurité informatique dans les institutions publiques (et comment les éviter)
+          </h1>
+          <div class="article-meta">
+            <div class="article-meta-item">
+              <i class="far fa-calendar-alt"></i>
+              <span>15 avril 2025</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-user"></i>
+              <span>Par Nadir DJEDIDEN</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-clock"></i>
+              <span>Temps de lecture: 4 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8" data-aos="fade-up">
+          <article class="article-content">
+            <p>
+              Dans les écoles, universités et mairies, la sécurité informatique est souvent négligée malgré les risques croissants. Cet article expose les 5 erreurs les plus fréquentes dans les institutions publiques et vous guide pour les éviter efficacement.
+            </p>
+
+            <p>
+              Une infrastructure mal sécurisée met en danger les données sensibles des citoyens, des élèves et du personnel administratif. Voyons comment protéger ces informations critiques.
+            </p>
+
+            <img
+              src="../img/bestpractice.jpg"
+              alt="Cybersécurité dans les institutions publiques"
+              class="img-fluid" />
+            <p class="article-image-caption">
+              La cybersécurité représente un défi majeur pour les institutions publiques en Algérie
+            </p>
+
+            <h2 id="section1">1. Mots de passe faibles ou identiques</h2>
+            <p>
+              L'utilisation de mots de passe simples, faciles à deviner ou réutilisés sur plusieurs plateformes constitue une vulnérabilité majeure dans de nombreuses institutions publiques. Il n'est pas rare de voir des mots de passe comme "123456", "admin123" ou même le nom de l'établissement.
+            </p>
+
+            <div class="note-box">
+              <div class="box-title">
+                <i class="fas fa-info-circle"></i> À noter
+              </div>
+              <p>
+                Selon une étude récente, plus de 80% des violations de données dans le secteur public commencent par la compromission d'identifiants faibles.
+              </p>
+            </div>
+
+            <p><strong>Comment éviter cette erreur :</strong></p>
+            <ul>
+              <li>Utilisez un gestionnaire de mots de passe institutionnel</li>
+              <li>Imposez des politiques de mots de passe robustes (minimum 12 caractères avec lettres, chiffres et symboles)</li>
+              <li>Changez les mots de passe par défaut sur tous les équipements</li>
+              <li>Mettez en place l'authentification à deux facteurs quand c'est possible</li>
+            </ul>
+
+            <h2 id="section2">2. Pas de sauvegarde régulière</h2>
+            <p>
+              De nombreuses écoles et administrations ne réalisent pas de sauvegardes régulières de leurs données critiques. En cas de panne matérielle, d'attaque ransomware ou même d'erreur humaine, c'est potentiellement des années d'archives et de documents qui peuvent disparaître.
+            </p>
+
+            <p><strong>Comment éviter cette erreur :</strong></p>
+            <ul>
+              <li>Mettez en place un système de sauvegarde automatique quotidien</li>
+              <li>Suivez la règle 3-2-1 : 3 copies des données, sur 2 supports différents, dont 1 hors site</li>
+              <li>Testez régulièrement la restauration des données pour confirmer que le système fonctionne</li>
+              <li>Envisagez un NAS (serveur de stockage en réseau) sécurisé pour centraliser les sauvegardes</li>
+            </ul>
+
+            <div class="tip-box">
+              <div class="box-title">
+                <i class="fas fa-lightbulb"></i> Conseil
+              </div>
+              <p>
+                Pour les petites structures, un NAS Synology ou QNAP avec disques redondants (RAID) offre un excellent rapport qualité/prix et peut être configuré en quelques heures.
+              </p>
+            </div>
+
+            <h2 id="section3">3. Mise à jour négligée des systèmes</h2>
+            <p>
+              Dans de nombreuses institutions publiques, les ordinateurs et serveurs fonctionnent avec des systèmes d'exploitation et des logiciels obsolètes. Ces versions non mises à jour contiennent des vulnérabilités connues que les pirates peuvent facilement exploiter.
+            </p>
+
+            <p><strong>Comment éviter cette erreur :</strong></p>
+            <ul>
+              <li>Planifiez des mises à jour mensuelles de tous les systèmes</li>
+              <li>Automatisez les mises à jour de sécurité critiques</li>
+              <li>Remplacez les systèmes qui ne sont plus supportés (Windows 7, Windows Server 2008...)</li>
+              <li>Utilisez un outil de gestion centralisée des mises à jour pour votre parc informatique</li>
+            </ul>
+
+            <h2 id="section4">4. Absence de pare-feu efficace</h2>
+            <p>
+              Beaucoup d'établissements se contentent du pare-feu intégré à leur box internet, qui n'offre qu'une protection minimale. Sans un pare-feu professionnel correctement configuré, le réseau est vulnérable aux intrusions.
+            </p>
+
+            <div class="warning-box">
+              <div class="box-title">
+                <i class="fas fa-exclamation-triangle"></i> Attention
+              </div>
+              <p>
+                Un pare-feu mal configuré peut donner un faux sentiment de sécurité tout en laissant des portes ouvertes aux attaquants.
+              </p>
+            </div>
+
+            <p><strong>Comment éviter cette erreur :</strong></p>
+            <ul>
+              <li>Investissez dans un pare-feu matériel professionnel (Fortinet, Cisco, PfSense)</li>
+              <li>Configurez correctement les règles de filtrage et segmentez votre réseau</li>
+              <li>Activez l'inspection approfondie des paquets pour détecter les menaces avancées</li>
+              <li>Configurez des VLANs distincts pour séparer le réseau administratif du réseau public/élèves</li>
+            </ul>
+
+            <h2 id="section5">5. Manque de sensibilisation du personnel</h2>
+            <p>
+              La plus grande vulnérabilité reste humaine. Sans formation, les enseignants et le personnel administratif peuvent facilement tomber dans des pièges comme le phishing, compromettant ainsi l'ensemble du réseau.
+            </p>
+
+            <p><strong>Comment éviter cette erreur :</strong></p>
+            <ul>
+              <li>Organisez des sessions de sensibilisation régulières pour tout le personnel</li>
+              <li>Mettez en place des simulations de phishing pour tester la vigilance</li>
+              <li>Créez des procédures claires à suivre en cas d'incident</li>
+              <li>Désignez un référent sécurité informatique formé aux bonnes pratiques</li>
+            </ul>
+
+            <h2 id="section6">Conclusion</h2>
+            <p>
+              La cybersécurité n'est pas un luxe mais une nécessité absolue pour les écoles, universités et mairies qui gèrent quotidiennement des données sensibles. Les attaques sont de plus en plus fréquentes contre les institutions publiques, perçues comme des cibles faciles.
+            </p>
+
+            <p>
+              Chez Infra Salama, nous proposons des audits gratuits pour les institutions publiques algériennes afin d'identifier vos vulnérabilités et vous recommander des solutions adaptées à votre budget et à vos besoins spécifiques.
+            </p>
+
+            <p>
+              N'attendez pas d'être victime d'une cyberattaque pour agir. Contactez-nous dès aujourd'hui pour sécuriser votre infrastructure informatique.
+            </p>
+
+            <!-- Article Share -->
+            <div class="article-share">
+              <h4>Partagez cet article</h4>
+              <div class="share-buttons">
+                <a href="#" class="share-button facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-button twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-button linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <!-- Author Info -->
+            <!-- <div class="article-author">
+                <div class="author-avatar">
+                  <img
+                    src="/placeholder.svg?height=200&width=200"
+                    alt="Nadir DJEDIDEN"
+                  />
+                </div>
+                <div class="author-info">
+                  <h4>Nadir DJEDIDEN</h4>
+                  <p>
+                    Expert en Administration systèmes, Réseau et cybersécurité avec plus de 5 ans d'expérience
+                    dans la protection des infrastructures critiques. nADIR est
+                    certifié CCNA et comptIA security+, et conseille régulièrement les
+                    entreprises sur les meilleures pratiques de sécurité.
+                  </p>
+                  <div class="author-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                  </div>
+                </div>
+              </div> -->
+          </article>
+
+
+          <!-- Comment Form -->
+          <!-- <div class="comment-form">
+              <h3>Laisser un commentaire</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Votre nom *"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Votre email *"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      placeholder="Votre commentaire *"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                      Publier le commentaire
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div> -->
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 article-sidebar">
+          <!-- Table of Contents -->
+          <div class="article-table-of-contents" data-aos="fade-up">
+            <h4><i class="fas fa-list"></i> Sommaire</h4>
+            <ul id="tableOfContents">
+              <li>
+                <a href="#section1" class="active">1. Mots de passe faibles ou identiques</a>
+              </li>
+              <li>
+                <a href="#section2">2. Pas de sauvegarde régulière</a>
+              </li>
+              <li>
+                <a href="#section3">3. Mise à jour négligée des systèmes</a>
+              </li>
+              <li>
+                <a href="#section4">4. Absence de pare-feu efficace</a>
+              </li>
+              <li>
+                <a href="#section5">5. Manque de sensibilisation du personnel</a>
+              </li>
+              <li>
+                <a href="#section6">6. Conclusion</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Related Articles -->
+          <!-- <div class="related-articles" data-aos="fade-up">
+              <h3>Articles similaires</h3>
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <div class="related-article-card">
+                    <div class="related-article-img">
+                      <img
+                        src="/placeholder.svg?height=200&width=400"
+                        alt="Protection contre les ransomwares"
+                      />
+                    </div>
+                    <div class="related-article-content">
+                      <div class="related-article-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>18 Mars 2023</span>
+                      </div>
+                      <h4 class="related-article-title">
+                        Protection contre les ransomwares : guide complet pour
+                        les entreprises
+                      </h4>
+                      <a href="#" class="blog-link"
+                        >Lire l'article <i class="fas fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="cta-section">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2>Besoin d'un audit de sécurité ?</h2>
+                <p>
+                  Contactez nos experts pour évaluer la sécurité de votre
+                  infrastructure IT et identifier les vulnérabilités
+                  potentielles.
+                </p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <a href="../contact.html" class="btn btn-light btn-lg">Contactez-nous</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img
+            src="img/logo-white.png"
+            alt="Infra Salama Logo"
+            class="footer-logo mb-3" />
+          <p>
+            Infra Salama est votre partenaire de confiance pour tous vos
+            besoins en infrastructure informatique. Nous offrons des solutions
+            innovantes et sécurisées pour les entreprises de toutes tailles.
+          </p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Liens Rapides</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../services.html">Nos Services</a></li>
+            <li><a href="../recrutement.html">Réalisations</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../devis.html">Devis</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Nos Services</h5>
+          <ul class="footer-links">
+            <li><a href="../services.html#reseaux">Réseaux Informatiques</a></li>
+            <li>
+              <a href="../services.html#securite">Sécurité Informatique</a>
+            </li>
+            <li><a href="../services.html#serveurs">Serveurs & Stockage</a></li>
+            <li><a href="../services.html#cloud">Solutions Cloud</a></li>
+            <li>
+              <a href="../services.html#communication">Communication Unifiée</a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h5>Contactez-nous</h5>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Rue des
+              Infrastructures, Alger, Algérie
+            </li>
+            <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+            <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+            <li>
+              <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="algerian-company">Entreprise 100% Algérienne</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Prism Syntax Highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="../js/script.js"></script>
+
+  <!-- Article Page Specific JavaScript -->
+  <script src="../js/article.js"></script>
+</body>
+
+</html>

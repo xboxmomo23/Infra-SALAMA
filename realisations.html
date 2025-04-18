@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réalisations - Infra Salama</title>
+  <meta
+    name="description"
+    content="Découvrez nos projets réalisés et nos réussites en matière d'infrastructure informatique" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Lightbox CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Réalisations Page Specific CSS -->
+  <style>
+    /* Styles spécifiques à la page réalisations */
+    .realisations-banner {
+      background: linear-gradient(rgba(0, 86, 179, 0.85),
+          rgba(0, 86, 179, 0.95)),
+        url("/placeholder.svg?height=800&width=1200");
+      background-size: cover;
+      background-position: center;
+      padding: 150px 0 80px;
+      color: #fff;
+      margin-top: 0;
+      position: relative;
+    }
+
+    .realisations-banner h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .realisations-banner p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .filter-btn {
+      padding: 12px 25px;
+      margin: 5px;
+      border-radius: 30px;
+      background-color: #f8f9fa;
+      color: #333;
+      border: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
+    .portfolio-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .portfolio-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-img img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .portfolio-card:hover .portfolio-img img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 86, 179, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-img:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay a {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0056b3;
+      font-size: 1.2rem;
+      transform: scale(0);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-img:hover .portfolio-overlay a {
+      transform: scale(1);
+    }
+
+    .portfolio-overlay a:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #0056b3;
+    }
+
+    .portfolio-info p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .stat-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      transition: all 0.3s ease;
+      border-bottom: 4px solid transparent;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-bottom: 4px solid #0056b3;
+    }
+
+    .stat-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(0, 86, 179, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .stat-icon i {
+      font-size: 30px;
+      color: #0056b3;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0056b3;
+    }
+
+    .stat-title {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .testimonial-carousel {
+      padding: 20px 0;
+    }
+
+    .testimonial-item {
+      margin: 0 15px;
+    }
+
+    .testimonial-content {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-content:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50px;
+      width: 30px;
+      height: 30px;
+      background-color: #fff;
+      transform: rotate(45deg);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .testimonial-content p {
+      font-style: italic;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .testimonial-author h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: #0056b3;
+    }
+
+    .testimonial-author p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .cta-section {
+      background: linear-gradient(rgba(0, 86, 179, 0.9),
+          rgba(0, 86, 179, 0.95)),
+        url("/placeholder.svg?height=800&width=1200");
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      color: #fff;
+      border-radius: 10px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .modal-content {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background-color: #0056b3;
+      color: #fff;
+      border-bottom: none;
+    }
+
+    .modal-header .btn-close {
+      color: #fff;
+      opacity: 1;
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .modal-body h4 {
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    .modal-body ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-body ul li {
+      margin-bottom: 5px;
+    }
+
+    .modal-footer {
+      border-top: none;
+      padding: 15px 30px 30px;
+    }
+
+    /* Animation pour les projets */
+    .portfolio-item {
+      transition: all 0.5s ease;
+    }
+
+    .portfolio-item.hide {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    .portfolio-item.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Styles pour les badges de technologie */
+    .tech-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: rgba(0, 86, 179, 0.1);
+      color: #0056b3;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    /* Styles pour les étapes du projet */
+    .project-timeline {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 20px;
+    }
+
+    .project-timeline:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #0056b3;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #0056b3;
+    }
+
+    .timeline-item h5 {
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+
+    /* Styles pour les résultats du projet */
+    .result-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .result-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 86, 179, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .result-icon i {
+      color: #0056b3;
+      font-size: 1.2rem;
+    }
+
+    .result-info h5 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: #0056b3;
+    }
+
+    .result-info p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.php">
+          <img
+            src="img/logoInfraSalama.png"
+            alt="Infra Salama Logo"
+            height="50" />
+          Infra Salama
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.php">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.php">Nos Solutions</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="realisations.html">Réalisations</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="faq.php">FAQ</a>
+            </li>
+            <!-- <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="temoignages.html">Témoignages</a>
+                    </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="recrutement.php">Recrutement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.php">Blog / conseil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.php">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary devis-btn" href="devis.php">Demander un devis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Réalisations Banner -->
+  <section class="realisations-banner">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <h1>Nos Réalisations</h1>
+          <p>
+            Découvrez nos projets réalisés et nos réussites en matière
+            d'infrastructure informatique pour des entreprises de tous
+            secteurs
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Filter Section -->
+  <section class="portfolio-filter section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2>Nos Projets Réalisés</h2>
+            <p>
+              Découvrez nos réalisations dans différents secteurs et domaines
+              d'expertise
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up">
+          <div class="portfolio-filters text-center mb-4">
+            <button class="btn filter-btn active" data-filter="all">
+              Tous
+            </button>
+            <button class="btn filter-btn" data-filter="reseaux">
+              Réseaux
+            </button>
+            <button class="btn filter-btn" data-filter="securite">
+              Sécurité
+            </button>
+            <button class="btn filter-btn" data-filter="cloud">Cloud</button>
+            <button class="btn filter-btn" data-filter="serveurs">
+              Serveurs
+            </button>
+            <button class="btn filter-btn" data-filter="communication">
+              Communication
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row portfolio-container">
+        <!-- Project 1 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item reseaux"
+          data-aos="fade-up">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Réseau Entreprise"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Modernisation du Réseau d'Entreprise">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Modernisation du Réseau d'Entreprise</h3>
+              <p>Secteur: Finance</p>
+              <a
+                href="#project1"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item securite"
+          data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Sécurité Informatique"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Mise en Place d'un SOC">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Mise en Place d'un SOC</h3>
+              <p>Secteur: Santé</p>
+              <a
+                href="#project2"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item cloud"
+          data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Migration Cloud"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Migration vers le Cloud">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Migration vers le Cloud</h3>
+              <p>Secteur: E-commerce</p>
+              <a
+                href="#project3"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item serveurs"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Infrastructure Serveurs"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Modernisation de l'Infrastructure Serveurs">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Modernisation de l'Infrastructure Serveurs</h3>
+              <p>Secteur: Éducation</p>
+              <a
+                href="#project4"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item communication"
+          data-aos="fade-up"
+          data-aos-delay="400">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Communication Unifiée"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Déploiement d'une Solution de Communication Unifiée">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Déploiement d'une Solution de Communication Unifiée</h3>
+              <p>Secteur: Services</p>
+              <a
+                href="#project5"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div
+          class="col-lg-4 col-md-6 mb-4 portfolio-item reseaux securite"
+          data-aos="fade-up"
+          data-aos-delay="500">
+          <div class="portfolio-card">
+            <div class="portfolio-img">
+              <img
+                src="/placeholder.svg?height=300&width=400"
+                alt="Projet Réseau Sécurisé"
+                class="img-fluid" />
+              <div class="portfolio-overlay">
+                <a
+                  href="/placeholder.svg?height=800&width=1200"
+                  data-lightbox="portfolio"
+                  data-title="Mise en Place d'un Réseau Sécurisé">
+                  <i class="fas fa-search-plus"></i>
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Mise en Place d'un Réseau Sécurisé</h3>
+              <p>Secteur: Gouvernement</p>
+              <a
+                href="#project6"
+                class="btn btn-outline-primary btn-sm"
+                data-bs-toggle="modal">Voir Détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <!-- Project 1 Modal -->
+  <div
+    class="modal fade"
+    id="project1"
+    tabindex="-1"
+    aria-labelledby="project1Label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project1Label">
+            Modernisation du Réseau d'Entreprise
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img
+                src="/placeholder.svg?height=400&width=600"
+                alt="Modernisation du Réseau d'Entreprise"
+                class="img-fluid rounded" />
+              <div class="mt-3">
+                <span class="tech-badge">Cisco</span>
+                <span class="tech-badge">Routage</span>
+                <span class="tech-badge">Commutation</span>
+                <span class="tech-badge">Sécurité</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Le Défi</h4>
+              <p>
+                Une grande institution financière algérienne avait besoin de
+                moderniser son infrastructure réseau vieillissante pour
+                améliorer la performance, la sécurité et la fiabilité.
+              </p>
+
+              <h4>Notre Solution</h4>
+              <p>
+                Nous avons conçu et déployé une architecture réseau moderne
+                basée sur la technologie Cisco, incluant des commutateurs de
+                nouvelle génération, des routeurs avancés et une segmentation
+                réseau optimisée.
+              </p>
+
+              <div class="project-timeline">
+                <div class="timeline-item">
+                  <h5>Phase 1: Audit et Conception</h5>
+                  <p>
+                    Analyse complète de l'infrastructure existante et
+                    conception d'une nouvelle architecture réseau.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 2: Déploiement</h5>
+                  <p>
+                    Installation et configuration des nouveaux équipements
+                    avec un minimum d'interruption des services.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 3: Migration</h5>
+                  <p>
+                    Migration progressive des services vers la nouvelle
+                    infrastructure.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 4: Optimisation</h5>
+                  <p>
+                    Ajustements et optimisations pour garantir des
+                    performances optimales.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <h4>Résultats</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Augmentation de la vitesse du réseau de 400%</h5>
+                      <p>
+                        Amélioration significative des performances pour tous
+                        les utilisateurs.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Réduction des temps d'arrêt de 99%</h5>
+                      <p>Disponibilité quasi continue des services réseau.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>
+                        Amélioration significative de la sécurité réseau
+                      </h5>
+                      <p>
+                        Protection renforcée contre les menaces internes et
+                        externes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Réduction des coûts opérationnels de 30%</h5>
+                      <p>
+                        Économies significatives grâce à une meilleure
+                        efficacité.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">
+            Fermer
+          </button>
+          <a href="contact.html" class="btn btn-primary">Contactez-nous pour un projet similaire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Modal -->
+  <div
+    class="modal fade"
+    id="project2"
+    tabindex="-1"
+    aria-labelledby="project2Label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project2Label">
+            Mise en Place d'un SOC
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img
+                src="/placeholder.svg?height=400&width=600"
+                alt="Mise en Place d'un SOC"
+                class="img-fluid rounded" />
+              <div class="mt-3">
+                <span class="tech-badge">SIEM</span>
+                <span class="tech-badge">IDS/IPS</span>
+                <span class="tech-badge">Analyse de logs</span>
+                <span class="tech-badge">Surveillance 24/7</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Le Défi</h4>
+              <p>
+                Un grand hôpital avait besoin de renforcer sa sécurité
+                informatique pour protéger les données sensibles des patients
+                et se conformer aux réglementations en matière de protection
+                des données.
+              </p>
+
+              <h4>Notre Solution</h4>
+              <p>
+                Nous avons mis en place un Centre Opérationnel de Sécurité
+                (SOC) complet, incluant des solutions SIEM, des systèmes de
+                détection et de prévention d'intrusion, et une surveillance
+                continue 24/7.
+              </p>
+
+              <div class="project-timeline">
+                <div class="timeline-item">
+                  <h5>Phase 1: Évaluation des Risques</h5>
+                  <p>
+                    Identification des vulnérabilités et des menaces
+                    potentielles.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 2: Conception du SOC</h5>
+                  <p>
+                    Élaboration d'une architecture de sécurité adaptée aux
+                    besoins spécifiques.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 3: Implémentation</h5>
+                  <p>
+                    Déploiement des solutions de sécurité et configuration des
+                    systèmes de surveillance.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 4: Formation</h5>
+                  <p>
+                    Formation du personnel interne aux procédures de sécurité.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <h4>Résultats</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>
+                        Détection et neutralisation proactive des menaces
+                      </h5>
+                      <p>
+                        Identification précoce des tentatives d'intrusion.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>
+                        Réduction de 95% du temps de réponse aux incidents
+                      </h5>
+                      <p>
+                        Intervention rapide en cas de détection d'une menace.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Conformité totale aux réglementations</h5>
+                      <p>
+                        Respect des normes en matière de protection des
+                        données.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Formation du personnel interne</h5>
+                      <p>
+                        Sensibilisation aux meilleures pratiques de sécurité.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">
+            Fermer
+          </button>
+          <a href="contact.html" class="btn btn-primary">Contactez-nous pour un projet similaire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 Modal -->
+  <div
+    class="modal fade"
+    id="project3"
+    tabindex="-1"
+    aria-labelledby="project3Label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="project3Label">
+            Migration vers le Cloud
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img
+                src="/placeholder.svg?height=400&width=600"
+                alt="Migration vers le Cloud"
+                class="img-fluid rounded" />
+              <div class="mt-3">
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Azure</span>
+                <span class="tech-badge">IaaS</span>
+                <span class="tech-badge">PaaS</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>Le Défi</h4>
+              <p>
+                Une entreprise de e-commerce en pleine croissance avait besoin
+                d'une infrastructure plus évolutive et flexible pour gérer les
+                pics de trafic saisonniers et réduire les coûts
+                d'infrastructure.
+              </p>
+
+              <h4>Notre Solution</h4>
+              <p>
+                Nous avons conçu et mis en œuvre une stratégie de migration
+                vers le cloud, en utilisant une approche hybride combinant AWS
+                et des solutions sur site pour optimiser les performances et
+                les coûts.
+              </p>
+
+              <div class="project-timeline">
+                <div class="timeline-item">
+                  <h5>Phase 1: Évaluation et Planification</h5>
+                  <p>Analyse des applications et des données à migrer.</p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 2: Preuve de Concept</h5>
+                  <p>
+                    Migration d'applications non critiques pour valider
+                    l'approche.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 3: Migration Principale</h5>
+                  <p>
+                    Transfert progressif des applications et des données vers
+                    le cloud.
+                  </p>
+                </div>
+                <div class="timeline-item">
+                  <h5>Phase 4: Optimisation</h5>
+                  <p>
+                    Ajustement des ressources cloud pour maximiser les
+                    performances et minimiser les coûts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12">
+              <h4>Résultats</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>
+                        Augmentation de 300% de la capacité lors des pics
+                      </h5>
+                      <p>
+                        Capacité à gérer les périodes de forte demande sans
+                        interruption.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Réduction des coûts d'infrastructure de 40%</h5>
+                      <p>
+                        Économies significatives grâce au modèle de paiement à
+                        l'usage.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Déploiement 5 fois plus rapide</h5>
+                      <p>
+                        Accélération significative du déploiement de nouvelles
+                        fonctionnalités.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="result-item">
+                    <div class="result-icon">
+                      <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="result-info">
+                      <h5>Expansion internationale facilitée</h5>
+                      <p>
+                        Capacité à servir des clients dans de nouvelles
+                        régions sans infrastructure locale.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">
+            Fermer
+          </button>
+          <a href="contact.html" class="btn btn-primary">Contactez-nous pour un projet similaire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="stats-section section-padding bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2>Notre Impact en Chiffres</h2>
+            <p>
+              Découvrez l'impact de nos solutions sur les entreprises
+              algériennes
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Stat 1 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="stat-number" data-count="200">0</h3>
+            <p class="stat-title">Projets Réalisés</p>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div
+          class="col-lg-3 col-md-6 mb-4"
+          data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="stat-number" data-count="150">0</h3>
+            <p class="stat-title">Clients Satisfaits</p>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div
+          class="col-lg-3 col-md-6 mb-4"
+          data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="stat-number" data-count="40">0</h3>
+            <p class="stat-title">Augmentation de Productivité</p>
+          </div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div
+          class="col-lg-3 col-md-6 mb-4"
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="stat-number" data-count="99.9">0</h3>
+            <p class="stat-title">Temps de Disponibilité</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-title text-center mb-5" data-aos="fade-up">
+            <h2>Ce Que Disent Nos Clients</h2>
+            <p>Découvrez les témoignages de nos clients satisfaits</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up">
+          <div class="testimonial-carousel">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <p>
+                  "Infra Salama a transformé notre infrastructure
+                  informatique. Leur expertise technique et leur
+                  professionnalisme ont dépassé nos attentes. Nous
+                  recommandons vivement leurs services."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="/placeholder.svg?height=80&width=80"
+                  alt="Ahmed Benali"
+                  class="rounded-circle" />
+                <div>
+                  <h4>Ahmed Benali</h4>
+                  <p>Directeur IT, Banque Nationale d'Algérie</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <p>
+                  "Grâce à la solution de sécurité mise en place par Infra
+                  Salama, nous avons pu protéger efficacement nos données
+                  sensibles et prévenir les cyberattaques. Un partenaire de
+                  confiance."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="/placeholder.svg?height=80&width=80"
+                  alt="Samira Hadj"
+                  class="rounded-circle" />
+                <div>
+                  <h4>Samira Hadj</h4>
+                  <p>RSSI, Hôpital Universitaire d'Alger</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <p>
+                  "La migration vers le cloud orchestrée par Infra Salama a
+                  été un succès total. Notre entreprise a gagné en agilité et
+                  en efficacité, tout en réduisant nos coûts
+                  d'infrastructure."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="/placeholder.svg?height=80&width=80"
+                  alt="Karim Medjaoui"
+                  class="rounded-circle" />
+                <div>
+                  <h4>Karim Medjaoui</h4>
+                  <p>CEO, E-Commerce Leader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="cta-section">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2>Prêt à Transformer Votre Infrastructure IT?</h2>
+                <p>
+                  Contactez-nous dès aujourd'hui pour discuter de votre projet
+                  et découvrir comment nous pouvons vous aider à atteindre vos
+                  objectifs.
+                </p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <a href="contact.html" class="btn btn-light btn-lg">Contactez-nous</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img
+            src="img/logo-white.png"
+            alt="Infra Salama Logo"
+            class="footer-logo mb-3" />
+          <p>
+            Infra Salama est votre partenaire de confiance pour tous vos
+            besoins en infrastructure informatique. Nous offrons des solutions
+            innovantes et sécurisées pour les entreprises de toutes tailles.
+          </p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Liens Rapides</h5>
+          <ul class="footer-links">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="services.php">Nos Services</a></li>
+            <li><a href="realisations.php">Réalisations</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Nos Services</h5>
+          <ul class="footer-links">
+            <li><a href="services.php#reseaux">Réseaux Informatiques</a></li>
+            <li>
+              <a href="services.php#securite">Sécurité Informatique</a>
+            </li>
+            <li><a href="services.php#serveurs">Serveurs & Stockage</a></li>
+            <li><a href="services.php#cloud">Solutions Cloud</a></li>
+            <li>
+              <a href="services.php#communication">Communication Unifiée</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h5>Contactez-nous</h5>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Rue des
+              Infrastructures, Alger, Algérie
+            </li>
+            <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+            <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+            <li>
+              <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="algerian-company">Entreprise 100% Algérienne</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+
+  <!-- Réalisations Page Specific JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Portfolio filtering
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", function() {
+          // Remove active class from all buttons
+          filterBtns.forEach((btn) => btn.classList.remove("active"));
+          // Add active class to clicked button
+          this.classList.add("active");
+
+          const filterValue = this.getAttribute("data-filter");
+
+          portfolioItems.forEach((item) => {
+            if (filterValue === "all") {
+              item.classList.remove("hide");
+              setTimeout(() => {
+                item.classList.add("show");
+              }, 100);
+            } else {
+              if (item.classList.contains(filterValue)) {
+                item.classList.remove("hide");
+                setTimeout(() => {
+                  item.classList.add("show");
+                }, 100);
+              } else {
+                item.classList.remove("show");
+                item.classList.add("hide");
+              }
+            }
+          });
+        });
+      });
+
+      // Animate stats numbers
+      const statNumbers = document.querySelectorAll(".stat-number");
+
+      function animateStats() {
+        statNumbers.forEach((stat) => {
+          const target = parseFloat(stat.getAttribute("data-count"));
+          const duration = 2000; // 2 seconds
+          const step = target / (duration / 16); // 60fps
+          let current = 0;
+          const isDecimal = target % 1 !== 0;
+
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              clearInterval(timer);
+              current = target;
+            }
+
+            if (isDecimal) {
+              stat.textContent = current.toFixed(1);
+            } else {
+              stat.textContent = Math.floor(current);
+            }
+          }, 16);
+        });
+      }
+
+      // Trigger animation when stats section is in view
+      const statsSection = document.querySelector(".stats-section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateStats();
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.5
+        }
+      );
+
+      observer.observe(statsSection);
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function(e) {
+          if (
+            this.getAttribute("href") !== "#" &&
+            !this.getAttribute("data-bs-toggle")
+          ) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

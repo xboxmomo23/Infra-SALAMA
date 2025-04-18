@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog / Conseils - Infra Salama</title>
+    <meta
+      name="description"
+      content="Découvrez nos conseils et articles sur la sécurité informatique et les infrastructures IT"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Blog Page Specific CSS -->
+    <style>
+      /* Styles spécifiques à la page blog */
+      .blog-banner {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.85),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 80px;
+        color: #fff;
+        margin-top: 0;
+        position: relative;
+      }
+
+      .blog-banner h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .blog-banner p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .search-container {
+        max-width: 600px;
+        margin: 0 auto 50px;
+        position: relative;
+      }
+
+      .search-container input {
+        height: 60px;
+        border-radius: 30px;
+        padding-left: 25px;
+        padding-right: 60px;
+        font-size: 1.1rem;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+
+      .search-container button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .search-container button:hover {
+        background-color: #003d7a;
+      }
+
+      .blog-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        height: 100%;
+        margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .blog-card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-img {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+      }
+
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .blog-card:hover .blog-img img {
+        transform: scale(1.1);
+      }
+
+      .blog-category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: #0056b3;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+      }
+
+      .blog-content {
+        padding: 25px;
+      }
+
+      .blog-date {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .blog-date i {
+        margin-right: 5px;
+        color: #0056b3;
+      }
+
+      .blog-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+        transition: all 0.3s ease;
+        line-height: 1.4;
+      }
+
+      .blog-card:hover .blog-title {
+        color: #0056b3;
+      }
+
+      .blog-excerpt {
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .blog-link {
+        display: inline-block;
+        color: #0056b3;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .blog-link:after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #0056b3;
+        transition: all 0.3s ease;
+      }
+
+      .blog-card:hover .blog-link:after {
+        width: 100%;
+      }
+
+      .blog-link i {
+        margin-left: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .blog-card:hover .blog-link i {
+        transform: translateX(5px);
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 50px 0;
+        width: 100%;
+        display: none;
+      }
+
+      .no-results i {
+        font-size: 3rem;
+        color: #ccc;
+        margin-bottom: 20px;
+      }
+
+      .no-results h3 {
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .no-results p {
+        color: #777;
+      }
+
+      .newsletter-section {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.9),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: #fff;
+        border-radius: 10px;
+        margin-top: 50px;
+      }
+
+      .newsletter-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .newsletter-section p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .newsletter-form {
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .newsletter-form input {
+        height: 60px;
+        border-radius: 30px;
+        padding-left: 25px;
+        padding-right: 150px;
+        font-size: 1.1rem;
+        border: none;
+        width: 100%;
+      }
+
+      .newsletter-form button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        height: 50px;
+        padding: 0 25px;
+        border-radius: 25px;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .newsletter-form button:hover {
+        background-color: #003d7a;
+      }
+
+      .categories-section {
+        margin-bottom: 50px;
+      }
+
+      .category-btn {
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 30px;
+        background-color: #f8f9fa;
+        color: #333;
+        border: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .category-btn:hover,
+      .category-btn.active {
+        background-color: #0056b3;
+        color: #fff;
+      }
+
+      @media (max-width: 767px) {
+        .blog-banner h1 {
+          font-size: 2.5rem;
+        }
+
+        .blog-banner p {
+          font-size: 1rem;
+        }
+
+        .search-container input {
+          height: 50px;
+          font-size: 1rem;
+        }
+
+        .search-container button {
+          height: 40px;
+          width: 40px;
+          font-size: 1rem;
+        }
+
+        .newsletter-section h2 {
+          font-size: 2rem;
+        }
+
+        .newsletter-section p {
+          font-size: 1rem;
+        }
+
+        .newsletter-form input {
+          height: 50px;
+          padding-right: 120px;
+          font-size: 1rem;
+        }
+
+        .newsletter-form button {
+          height: 40px;
+          padding: 0 15px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="img/logoInfraSalama.png"
+              alt="Infra Salama Logo"
+              height="50"
+            />
+            Infra Salama
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Nos Solutions</a>
+              </li>
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="realisations.html">Réalisations</a>
+            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+              <!-- <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="temoignages.html">Témoignages</a>
+                    </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="recrutement.html">Recrutement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog / conseil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary devis-btn" href="devis.html"
+                  >Demander un devis</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Blog Banner -->
+    <section class="blog-banner">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <h1>Nos Conseils en Sécurité et Infrastructures IT</h1>
+            <p>
+              Découvrez nos articles, guides et conseils pour optimiser votre
+              infrastructure informatique et renforcer votre sécurité
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="section-padding">
+      <div class="container">
+        <!-- Search Bar -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="search-container" data-aos="fade-up">
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Rechercher un article..."
+              />
+              <button type="button" id="searchBtn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="categories-section text-center" data-aos="fade-up">
+              <button class="category-btn active" data-category="all">
+                Tous
+              </button>
+              <button class="category-btn" data-category="securite">
+                Sécurité
+              </button>
+              <button class="category-btn" data-category="reseaux">
+                Réseaux
+              </button>
+              <button class="category-btn" data-category="cloud">Cloud</button>
+              <button class="category-btn" data-category="serveurs">
+                Serveurs
+              </button>
+              <button class="category-btn" data-category="conseils">
+                Conseils
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="row" id="blogContainer">
+          <!-- Blog Post 1 -->
+          <div class="col-lg-4 col-md-6 blog-item" data-category="securite">
+            <div class="blog-card">
+              <div class="blog-img">
+                <span class="blog-category">Sécurité</span>
+                <img
+                  src="img/bestpractice.jpg"
+                  alt="Les meilleures pratiques de cybersécurité"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Avril 2025</span>
+                </div>
+                <h3 class="blog-title">
+                  5 erreurs courantes de sécurité informatique dans les
+                  institutions publiques (et comment les éviter)
+                </h3>
+                <p class="blog-excerpt">
+                  Dans les écoles, universités et mairies, la sécurité
+                  informatique est souvent négligée malgré les risques
+                  croissants. Cet article expose les 5 erreurs les plus
+                  fréquentes dans les institutions publiques et vous guide pour
+                  les éviter efficacement.
+                </p>
+                <a href="articles/article1.php" class="blog-link"
+                  >Lire la suite <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="col-lg-4 col-md-6 blog-item" data-category="reseaux">
+            <div class="blog-card">
+              <div class="blog-img">
+                <span class="blog-category">Réseaux</span>
+                <img
+                  src="img/infrareseaumoderne.jpg"
+                  alt="Optimisation des réseaux d'entreprise"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Avril 2025</span>
+                </div>
+                <h3 class="blog-title">
+                  Pourquoi votre établissement a besoin d'un réseau bien
+                  structuré (et pas juste d'un routeur)
+                </h3>
+                <p class="blog-excerpt">
+                  De nombreuses écoles, universités et mairies pensent qu'un
+                  simple routeur wifi suffit pour répondre à leurs besoins
+                  informatiques. Cette vision simpliste peut cependant engendrer
+                  de sérieux problèmes de performance, de sécurité et de
+                  fiabilité. Dans cet article, nous expliquons pourquoi une
+                  infrastructure réseau professionnelle est indispensable pour
+                  les institutions publiques modernes, même avec des budgets
+                  limités.
+                </p>
+                <a href="articles/article2.php" class="blog-link"
+                  >Lire la suite <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="col-lg-4 col-md-6 blog-item" data-category="cloud">
+            <div class="blog-card">
+              <div class="blog-img">
+                <span class="blog-category">Cloud</span>
+                <img
+                  src="img/infracloudcomputing.jpg"
+                  alt="Migration vers le cloud"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Avril 2025</span>
+                </div>
+                <h3 class="blog-title">
+                  Faut-il passer au Cloud ? Les réponses pour les écoles et
+                  administrations en 2025
+                </h3>
+                <p class="blog-excerpt">
+                  La migration vers le cloud est présentée comme la solution
+                  miracle à tous les problèmes informatiques. Mais est-ce
+                  vraiment adapté aux écoles, universités et mairies algériennes
+                  ? Entre promesses marketing et réalités techniques, cet
+                  article vous aide à y voir plus clair. <br />
+                  <br />
+
+                  En 2025, le cloud computing a considérablement évolué, mais
+                  les spécificités des institutions publiques nécessitent une
+                  analyse approfondie avant toute décision de migration.
+                </p>
+                <a href="articles/article3.php" class="blog-link"
+                  >Lire la suite <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 4 -->
+          <div class="col-lg-4 col-md-6 blog-item" data-category="serveurs">
+            <div class="blog-card">
+              <div class="blog-img">
+                <span class="blog-category">Serveurs</span>
+                <img
+                  src="img/serveurpetiteinfra.jpg"
+                  alt="Virtualisation des serveurs"
+                />
+              </div>
+              <div class="blog-content">
+                <div class="blog-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Avril 2025</span>
+                </div>
+                <h3 class="blog-title">
+                  À quoi sert un serveur dans une école ou une mairie ? Un guide
+                  simple pour bien comprendre
+                </h3>
+                <p class="blog-excerpt">
+                  Avons-nous vraiment besoin d'un serveur ?" C'est une question
+                  fréquente dans les écoles, universités et mairies de taille
+                  modeste. Dans un monde où le cloud est omniprésent, l'utilité
+                  d'un serveur local peut sembler moins évidente. Pourtant, un
+                  serveur correctement configuré reste un élément fondamental
+                  pour une infrastructure informatique efficace et sécurisée
+                  dans une institution publique. Découvrons pourquoi.
+                </p>
+                <a href="articles/article4.php" class="blog-link"
+                  >Lire la suite <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post 5 -->
+          <div class="col-lg-4 col-md-6 blog-item" data-category="conseils">
+            <div class="blog-card">
+              <div class="blog-img">
+                <span class="blog-category">Conseils</span>
+                <img src="img/modernbudget.jpg" alt="Budget IT" />
+              </div>
+              <div class="blog-content">
+                <div class="blog-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>15 Avril 2025</span>
+                </div>
+                <h3 class="blog-title">
+                  Comment optimiser votre budget IT sans compromettre la
+                  sécurité
+                </h3>
+                <p class="blog-excerpt">
+                  Les directeurs d'établissements scolaires et administratifs
+                  font face à un défi constant : moderniser leur infrastructure
+                  informatique avec des contraintes budgétaires strictes. Entre
+                  les besoins croissants et les ressources limitées, comment
+                  faire les bons choix ? Cet article propose des stratégies
+                  concrètes pour optimiser votre infrastructure IT sans
+                  compromettre la qualité ni déséquilibrer vos finances.
+                </p>
+                <a href="articles/article5.php" class="blog-link"
+                  >Lire la suite <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- No Results Message -->
+          <div class="no-results" id="noResults">
+            <i class="fas fa-search"></i>
+            <h3>Aucun résultat trouvé</h3>
+            <p>
+              Essayez avec d'autres mots-clés ou consultez toutes nos
+              catégories.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <!-- <div class="row">
+        <div class="col-lg-12">
+          <nav aria-label="Blog pagination" class="mt-4">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a
+                  class="page-link"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true">Précédent</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Suivant</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div> -->
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <div class="newsletter-section">
+              <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                  <h2>Restez informé</h2>
+                  <p>
+                    Abonnez-vous à notre newsletter pour recevoir nos derniers
+                    articles et conseils directement dans votre boîte mail
+                  </p>
+                  <div class="newsletter-form">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Votre adresse email"
+                    />
+                    <button type="submit">S'abonner</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <img
+              src="img/logo-white.png"
+              alt="Infra Salama Logo"
+              class="footer-logo mb-3"
+            />
+            <p>
+              Infra Salama est votre partenaire de confiance pour tous vos
+              besoins en infrastructure informatique. Nous offrons des solutions
+              innovantes et sécurisées pour les entreprises de toutes tailles.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Liens Rapides</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Nos Services</a></li>
+              <li><a href="realisations.html">Réalisations</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Nos Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#reseaux">Réseaux Informatiques</a></li>
+              <li>
+                <a href="services.html#securite">Sécurité Informatique</a>
+              </li>
+              <li><a href="services.html#serveurs">Serveurs & Stockage</a></li>
+              <li><a href="services.html#cloud">Solutions Cloud</a></li>
+              <li>
+                <a href="services.html#communication">Communication Unifiée</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-4 col-md-6">
+            <h5>Contactez-nous</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Rue des
+                Infrastructures, Alger, Algérie
+              </li>
+              <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+              <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+              <li>
+                <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="algerian-company">Entreprise 100% Algérienne</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Blog Page Specific JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+
+        // Animate blog cards on load
+        const blogCards = document.querySelectorAll(".blog-card");
+        blogCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add("show");
+          }, 100 * index);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const blogItems = document.querySelectorAll(".blog-item");
+        const noResults = document.getElementById("noResults");
+
+        function performSearch() {
+          const searchTerm = searchInput.value.toLowerCase();
+          let resultsFound = false;
+
+          blogItems.forEach((item) => {
+            const title = item
+              .querySelector(".blog-title")
+              .textContent.toLowerCase();
+            const excerpt = item
+              .querySelector(".blog-excerpt")
+              .textContent.toLowerCase();
+            const category = item.getAttribute("data-category").toLowerCase();
+
+            if (
+              title.includes(searchTerm) ||
+              excerpt.includes(searchTerm) ||
+              category.includes(searchTerm)
+            ) {
+              item.style.display = "block";
+              resultsFound = true;
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          if (resultsFound) {
+            noResults.style.display = "none";
+          } else {
+            noResults.style.display = "block";
+          }
+        }
+
+        searchBtn.addEventListener("click", performSearch);
+        searchInput.addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            performSearch();
+          }
+        });
+
+        // Category filtering
+        const categoryBtns = document.querySelectorAll(".category-btn");
+
+        categoryBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons
+            categoryBtns.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const category = this.getAttribute("data-category");
+            let resultsFound = false;
+
+            blogItems.forEach((item) => {
+              if (
+                category === "all" ||
+                item.getAttribute("data-category") === category
+              ) {
+                item.style.display = "block";
+                resultsFound = true;
+              } else {
+                item.style.display = "none";
+              }
+            });
+
+            if (resultsFound) {
+              noResults.style.display = "none";
+            } else {
+              noResults.style.display = "block";
+            }
+          });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            if (this.getAttribute("href") !== "#") {
+              e.preventDefault();
+
+              const targetId = this.getAttribute("href");
+              const targetElement = document.querySelector(targetId);
+
+              if (targetElement) {
+                window.scrollTo({
+                  top: targetElement.offsetTop - 100,
+                  behavior: "smooth",
+                });
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

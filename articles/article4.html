@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titre de l'Article - Blog Infra Salama</title>
+  <meta
+    name="description"
+    content="Description de l'article pour le référencement" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Prism Syntax Highlighting -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../img/logoInfraSalama.png" alt="Infra Salama Logo" height="50" /> Infra Salama
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../services.html">Nos Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../recrutement.html">Recrutement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../blog.html">Blog / Conseils</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../devis.html">Demander un Devis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Banner -->
+  <section class="article-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <a href="../blog.html" class="back-to-blog"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+          <span class="article-category">Serveurs</span>
+          <h1>
+            À quoi sert un serveur dans une école ou une mairie ? Un guide simple pour bien comprendre
+          </h1>
+          <div class="article-meta">
+            <div class="article-meta-item">
+              <i class="far fa-calendar-alt"></i>
+              <span>15 avril 2025</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-user"></i>
+              <span>Par Nadir DJEDIDEN</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-clock"></i>
+              <span>Temps de lecture: 4 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8" data-aos="fade-up">
+          <article class="article-content">
+            <p>
+              Avons-nous vraiment besoin d'un serveur ?" C'est une question fréquente dans les écoles, universités et mairies de taille modeste. Dans un monde où le cloud est omniprésent, l'utilité d'un serveur local peut sembler moins évidente.
+            </p>
+
+            <p>
+              Pourtant, un serveur correctement configuré reste un élément fondamental pour une infrastructure informatique efficace et sécurisée dans une institution publique. Découvrons pourquoi.
+            </p>
+
+            <img
+              src="../img/serveurpetiteinfra.jpg"
+              alt="Serveur dans une petite infrastructure"
+              class="img-fluid" />
+            <p class="article-image-caption">
+              Un serveur moderne peut être compact tout en offrant des performances élevées
+            </p>
+
+            <h2 id="section1">Qu'est-ce qu'un serveur exactement ?</h2>
+            <p>
+              Avant tout, clarifions ce qu'est un serveur. Contrairement aux idées reçues, un serveur n'est pas nécessairement une machine imposante qui occupe une pièce entière et coûte une fortune.
+            </p>
+
+            <p>
+              Un serveur est simplement un ordinateur optimisé pour fournir des services à d'autres ordinateurs (les "clients") sur un réseau. Il se distingue par :
+            </p>
+            <ul>
+              <li>Une conception orientée fiabilité et disponibilité (fonctionnement 24/7)</li>
+              <li>Des composants redondants (alimentation, ventilation, disques durs)</li>
+              <li>Une capacité de traitement adaptée aux besoins de multiples utilisateurs simultanés</li>
+              <li>Un système d'exploitation spécifique (Windows Server, Linux)</li>
+            </ul>
+
+            <p>
+              Pour une petite structure, un serveur peut être aussi simple qu'une tour légèrement plus robuste qu'un PC standard, pour quelques milliers de dinars.
+            </p>
+
+            <div class="note-box">
+              <div class="box-title">
+                <i class="fas fa-info-circle"></i> À noter
+              </div>
+              <p>
+                Il existe aujourd'hui des "micro-serveurs" adaptés aux petites structures qui ne sont pas plus grands qu'un livre et consomment très peu d'énergie.
+              </p>
+            </div>
+
+            <h2 id="section2">1. Centralisation des fichiers et des données</h2>
+            <p>
+              Le rôle le plus évident d'un serveur est de centraliser tous les documents importants en un seul endroit sécurisé et organisé.
+            </p>
+
+            <p><strong>Sans serveur :</strong></p>
+            <ul>
+              <li>Documents dispersés sur différents ordinateurs</li>
+              <li>Transfert par clés USB (risques de virus et de perte)</li>
+              <li>Versions multiples et contradictoires des mêmes fichiers</li>
+              <li>Difficultés à retrouver les documents importants</li>
+            </ul>
+
+            <p><strong>Avec un serveur de fichiers :</strong></p>
+            <ul>
+              <li>Tous les documents importants en un seul endroit</li>
+              <li>Accès contrôlé selon les droits de chaque utilisateur</li>
+              <li>Travail collaboratif sur les mêmes documents</li>
+              <li>Organisation logique par services/départements</li>
+              <li>Recherche centralisée dans tous les documents</li>
+            </ul>
+
+            <p>
+              Dans une école, cela permet par exemple de créer une bibliothèque de ressources pédagogiques partagées entre enseignants, d'archiver les dossiers des élèves, ou de centraliser les documents administratifs.
+            </p>
+
+            <h2 id="section3">2. Hébergement des logiciels métiers</h2>
+            <p>
+              La plupart des institutions publiques utilisent des logiciels spécifiques pour leur gestion quotidienne. Un serveur permet d'héberger ces applications en local.
+            </p>
+
+            <p><strong>Exemples d'applications métiers :</strong></p>
+            <ul>
+              <li>Pour les écoles : logiciels de gestion des notes, de suivi des élèves, d'emploi du temps</li>
+              <li>Pour les mairies : logiciels d'état civil, de gestion des ressources humaines, de comptabilité</li>
+              <li>Pour les universités : systèmes de gestion académique, plateformes d'apprentissage en ligne, gestion des inscriptions</li>
+              <li>Pour tous : solutions de gestion électronique de documents (GED)</li>
+            </ul>
+
+            <div class="tip-box">
+              <div class="box-title">
+                <i class="fas fa-lightbulb"></i> Conseil
+              </div>
+              <p>
+                Même si certains logiciels sont disponibles en version cloud, leur version locale offre souvent de meilleures performances et une disponibilité garantie, même en cas de coupure internet.
+              </p>
+            </div>
+
+            <p>
+              L'installation de ces logiciels sur un serveur central, plutôt que sur des postes individuels, présente plusieurs avantages :
+            </p>
+            <ul>
+              <li>Une seule installation à maintenir et mettre à jour</li>
+              <li>Base de données unique et cohérente</li>
+              <li>Accès possible depuis n'importe quel poste du réseau</li>
+              <li>Sauvegardes centralisées des données critiques</li>
+            </ul>
+
+            <h2 id="section4">3. Sécurité et sauvegarde</h2>
+            <p>
+              Un des rôles les plus cruciaux d'un serveur est de protéger les données essentielles de votre établissement contre les pertes et les accès non autorisés.
+            </p>
+
+            <p><strong>Protection des données sensibles :</strong></p>
+            <ul>
+              <li>Stockage sur des disques redondants (RAID) pour éviter les pertes en cas de panne matérielle</li>
+              <li>Sauvegardes automatiques programmées (quotidiennes, hebdomadaires)</li>
+              <li>Conservation de l'historique des modifications pour restaurer des versions antérieures</li>
+              <li>Protection contre les ransomwares grâce à des sauvegardes isolées</li>
+              <li>Chiffrement des données sensibles</li>
+            </ul>
+
+            <div class="warning-box">
+              <div class="box-title">
+                <i class="fas fa-exclamation-triangle"></i> Attention
+              </div>
+              <p>
+                La perte de certaines données administratives peut avoir des conséquences juridiques graves pour une institution publique. Un système de sauvegarde robuste est indispensable.
+              </p>
+            </div>
+
+            <h2 id="section5">4. Contrôle d'accès centralisé</h2>
+            <p>
+              Dans une institution avec de nombreux utilisateurs, la gestion des accès est un défi majeur. Un serveur équipé d'un annuaire (comme Active Directory) simplifie considérablement cette tâche.
+            </p>
+
+            <p><strong>Avantages d'un annuaire centralisé :</strong></p>
+            <ul>
+              <li>Comptes utilisateurs uniques pour accéder à toutes les ressources</li>
+              <li>Politique de mots de passe homogène et sécurisée</li>
+              <li>Groupes de sécurité pour attribuer des droits par fonction</li>
+              <li>Désactivation immédiate des accès lors du départ d'un collaborateur</li>
+              <li>Authentification unique (Single Sign-On) pour simplifier l'accès aux applications</li>
+            </ul>
+
+            <p>
+              Par exemple, dans une école, vous pouvez créer des profils différents pour :
+            </p>
+            <ul>
+              <li>La direction (accès complet aux ressources administratives)</li>
+              <li>Les enseignants (accès aux ressources pédagogiques et aux dossiers de leurs élèves)</li>
+              <li>Le personnel administratif (accès limité aux systèmes pertinents pour leur fonction)</li>
+              <li>Les élèves (accès uniquement aux ressources pédagogiques autorisées)</li>
+            </ul>
+
+            <h2 id="section6">5. Services réseau essentiels</h2>
+            <p>
+              Un serveur fournit également des services réseau fondamentaux qui améliorent le fonctionnement global de votre système informatique.
+            </p>
+
+            <p><strong>Services courants hébergés sur un serveur :</strong></p>
+            <ul>
+              <li>DHCP : attribution automatique des adresses IP aux appareils</li>
+              <li>DNS : résolution des noms de domaine pour la navigation internet</li>
+              <li>Serveur d'impression : gestion centralisée des imprimantes partagées</li>
+              <li>Proxy/Filtrage : contrôle de l'accès internet et protection contre les menaces</li>
+              <li>VPN : accès sécurisé à distance pour le télétravail</li>
+            </ul>
+
+            <p>
+              Ces services, souvent négligés, sont pourtant essentiels au bon fonctionnement quotidien de votre réseau. Leur centralisation sur un serveur garantit cohérence et fiabilité.
+            </p>
+
+            <h2 id="section7">Quel type de serveur pour quelle taille d'établissement ?</h2>
+            <p>
+              Le dimensionnement d'un serveur dépend principalement du nombre d'utilisateurs et des applications à héberger. Voici quelques repères :
+            </p>
+
+            <p><strong>Pour une petite structure (jusqu'à 20 utilisateurs) :</strong></p>
+            <ul>
+              <li>Un serveur tour de type "entry-level"</li>
+              <li>Processeur 4-6 cœurs</li>
+              <li>16-32 Go de RAM</li>
+              <li>Disques SSD en RAID 1 (2 disques identiques pour la redondance)</li>
+              <li>Windows Server Essentials ou Linux</li>
+            </ul>
+
+            <p><strong>Pour une structure moyenne (20-100 utilisateurs) :</strong></p>
+            <ul>
+              <li>Un serveur rack ou tour milieu de gamme</li>
+              <li>Processeur 8-12 cœurs</li>
+              <li>32-64 Go de RAM</li>
+              <li>Configuration RAID 5 ou 10 avec plusieurs disques</li>
+              <li>Windows Server Standard ou Linux avec services virtualisés</li>
+            </ul>
+
+            <p><strong>Pour une grande structure (plus de 100 utilisateurs) :</strong></p>
+            <ul>
+              <li>Infrastructure multi-serveurs ou serveur haute disponibilité</li>
+              <li>Environnement virtualisé pour héberger plusieurs serveurs logiques</li>
+              <li>Stockage SAN/NAS séparé pour les données</li>
+              <li>Redondance pour tous les composants critiques</li>
+            </ul>
+
+            <h2 id="section8">Conclusion : un investissement raisonnable aux multiples bénéfices</h2>
+            <p>
+              Un serveur représente un investissement initial modéré (généralement entre 150 000 et 500 000 DZD pour une petite structure) qui offre des bénéfices considérables en termes de productivité, de sécurité et de fiabilité.
+            </p>
+
+            <p>
+              Contrairement aux solutions cloud qui impliquent des coûts récurrents perpétuels, un serveur local bien entretenu peut fonctionner efficacement pendant 4 à 5 ans, avec un coût total de possession (TCO) souvent inférieur sur cette période.
+            </p>
+
+            <p>
+              Pour les institutions publiques algériennes avec des contraintes budgétaires, un serveur local reste souvent la solution la plus pragmatique et économique, offrant le meilleur équilibre entre performances, sécurité et coût.
+            </p>
+
+            <p>
+              Chez Infra Salama, nous proposons des solutions de serveurs adaptées spécifiquement aux besoins et aux budgets des écoles, universités et mairies algériennes. Contactez-nous pour une évaluation gratuite de vos besoins et un dimensionnement sur mesure.
+            </p>
+
+            <!-- Article Share -->
+            <div class="article-share">
+              <h4>Partagez cet article</h4>
+              <div class="share-buttons">
+                <a href="#" class="share-button facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-button twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-button linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <!-- Author Info -->
+            <!-- <div class="article-author">
+                <div class="author-avatar">
+                  <img
+                    src="/placeholder.svg?height=200&width=200"
+                    alt="Nadir DJEDIDEN"
+                  />
+                </div>
+                <div class="author-info">
+                  <h4>Nadir DJEDIDEN</h4>
+                  <p>
+                    Expert en Administration systèmes, Réseau et cybersécurité avec plus de 5 ans d'expérience
+                    dans la protection des infrastructures critiques. nADIR est
+                    certifié CCNA et comptIA security+, et conseille régulièrement les
+                    entreprises sur les meilleures pratiques de sécurité.
+                  </p>
+                  <div class="author-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                  </div>
+                </div>
+              </div> -->
+          </article>
+
+
+          <!-- Comment Form -->
+          <!-- <div class="comment-form">
+              <h3>Laisser un commentaire</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Votre nom *"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Votre email *"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      placeholder="Votre commentaire *"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                      Publier le commentaire
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div> -->
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 article-sidebar">
+          <!-- Table of Contents -->
+          <div class="article-table-of-contents" data-aos="fade-up">
+            <h4><i class="fas fa-list"></i> Sommaire</h4>
+            <ul id="tableOfContents">
+              <li>
+                <a href="#section2" class="active">1. Qu'est-ce qu'un serveur exactement ?</a>
+              </li>
+              <li>
+                <a href="#section2" class="active">2. Centralisation des fichiers et des données</a>
+              </li>
+              <li>
+                <a href="#section3">3. Hébergement des logiciels métiers</a>
+              </li>
+              <li>
+                <a href="#section4">4. Sécurité et sauvegarde</a>
+              </li>
+              <li>
+                <a href="#section5">5. Contrôle d'accès centralisé</a>
+              </li>
+              <li>
+                <a href="#section6">6. Services réseau essentiels</a>
+              </li>
+              <li>
+                <a href="#section7">7. Quel type de serveur pour quelle taille d'établissement ?</a>
+              </li>
+              <li>
+                <a href="#section8">8. Conclusion</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Related Articles -->
+          <!-- <div class="related-articles" data-aos="fade-up">
+              <h3>Articles similaires</h3>
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <div class="related-article-card">
+                    <div class="related-article-img">
+                      <img
+                        src="/placeholder.svg?height=200&width=400"
+                        alt="Protection contre les ransomwares"
+                      />
+                    </div>
+                    <div class="related-article-content">
+                      <div class="related-article-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>18 Mars 2023</span>
+                      </div>
+                      <h4 class="related-article-title">
+                        Protection contre les ransomwares : guide complet pour
+                        les entreprises
+                      </h4>
+                      <a href="#" class="blog-link"
+                        >Lire l'article <i class="fas fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="cta-section">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2>Besoin d'un audit de sécurité ?</h2>
+                <p>
+                  Contactez nos experts pour évaluer la sécurité de votre
+                  infrastructure IT et identifier les vulnérabilités
+                  potentielles.
+                </p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <a href="../contact.html" class="btn btn-light btn-lg">Contactez-nous</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img
+            src="img/logo-white.png"
+            alt="Infra Salama Logo"
+            class="footer-logo mb-3" />
+          <p>
+            Infra Salama est votre partenaire de confiance pour tous vos
+            besoins en infrastructure informatique. Nous offrons des solutions
+            innovantes et sécurisées pour les entreprises de toutes tailles.
+          </p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Liens Rapides</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../services.html">Nos Services</a></li>
+            <li><a href="../recrutement.html">Réalisations</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../devis.html">Devis</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Nos Services</h5>
+          <ul class="footer-links">
+            <li><a href="../services.html#reseaux">Réseaux Informatiques</a></li>
+            <li>
+              <a href="../services.html#securite">Sécurité Informatique</a>
+            </li>
+            <li><a href="../services.html#serveurs">Serveurs & Stockage</a></li>
+            <li><a href="../services.html#cloud">Solutions Cloud</a></li>
+            <li>
+              <a href="../services.html#communication">Communication Unifiée</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h5>Contactez-nous</h5>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Rue des
+              Infrastructures, Alger, Algérie
+            </li>
+            <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+            <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+            <li>
+              <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="algerian-company">Entreprise 100% Algérienne</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Prism Syntax Highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="../js/script.js"></script>
+
+  <!-- Article Page Specific JavaScript -->
+  <script src="../js/article.js"></script>
+
+</body>
+
+</html>

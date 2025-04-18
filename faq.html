@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Infra Salama</title>
+    <meta
+      name="description"
+      content="Questions fréquemment posées sur les services d'infrastructure informatique d'Infra Salama"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- FAQ Page Specific CSS -->
+    <style>
+      /* Styles spécifiques à la page FAQ */
+      .faq-banner {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.85),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 80px;
+        color: #fff;
+        margin-top: 0;
+        position: relative;
+      }
+
+      .faq-banner h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .faq-banner p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .faq-search {
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .faq-search input {
+        height: 60px;
+        border-radius: 30px;
+        padding-left: 25px;
+        padding-right: 60px;
+        font-size: 1.1rem;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-search button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .faq-search button:hover {
+        background-color: #003d7a;
+      }
+
+      .faq-categories {
+        margin-bottom: 40px;
+      }
+
+      .category-btn {
+        padding: 12px 25px;
+        margin: 5px;
+        border-radius: 30px;
+        background-color: #f8f9fa;
+        color: #333;
+        border: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .category-btn:hover,
+      .category-btn.active {
+        background-color: #0056b3;
+        color: #fff;
+      }
+
+      .faq-accordion {
+        margin-bottom: 30px;
+      }
+
+      .accordion-item {
+        border: none;
+        margin-bottom: 15px;
+        border-radius: 10px !important;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .accordion-button {
+        padding: 20px 25px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #333;
+        background-color: #fff;
+      }
+
+      .accordion-button:not(.collapsed) {
+        color: #0056b3;
+        background-color: #f8f9fa;
+        box-shadow: none;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(0, 86, 179, 0.25);
+      }
+
+      .accordion-button::after {
+        background-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-body {
+        padding: 20px 25px;
+        background-color: #f8f9fa;
+        color: #555;
+        line-height: 1.7;
+      }
+
+      .faq-contact {
+        background: linear-gradient(
+            rgba(0, 86, 179, 0.9),
+            rgba(0, 86, 179, 0.95)
+          ),
+          url("/placeholder.svg?height=800&width=1200");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: #fff;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .faq-contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .faq-contact p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .btn-light-outline {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        padding: 12px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-light-outline:hover {
+        background-color: #fff;
+        color: #0056b3;
+      }
+
+      .faq-category {
+        display: none;
+      }
+
+      .faq-category.active {
+        display: block;
+      }
+
+      .faq-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(0, 86, 179, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .faq-icon i {
+        font-size: 35px;
+        color: #0056b3;
+      }
+
+      .faq-category-title {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #0056b3;
+      }
+
+      .accordion-button.collapsed {
+        border-radius: 10px;
+      }
+
+      .accordion-button:not(.collapsed) {
+        border-radius: 10px 10px 0 0;
+      }
+
+      /* Animation pour l'accordéon */
+      .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      .accordion-button:not(.collapsed) + .accordion-collapse .accordion-body {
+        max-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="img/logoInfraSalama.png"
+              alt="Infra Salama Logo"
+              height="50"
+            />
+            Infra Salama
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Nos Solutions</a>
+              </li>
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="realisations.html">Réalisations</a>
+            </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="faq.html">FAQ</a>
+              </li>
+              <!-- <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="temoignages.html">Témoignages</a>
+                    </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="recrutement.html">Recrutement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog / conseil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary devis-btn" href="devis.html"
+                  >Demander un devis</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- FAQ Banner -->
+    <section class="faq-banner">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <h1>Questions Fréquemment Posées</h1>
+            <p>
+              Trouvez rapidement des réponses à vos questions sur nos services
+              d'infrastructure informatique
+            </p>
+            <div class="faq-search mt-4">
+              <input
+                type="text"
+                id="faqSearch"
+                class="form-control"
+                placeholder="Rechercher une question..."
+              />
+              <button type="button" id="searchBtn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Categories Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center" data-aos="fade-up">
+            <div class="faq-categories">
+              <button class="category-btn active" data-category="all">
+                Toutes les Questions
+              </button>
+              <button class="category-btn" data-category="general">
+                Général
+              </button>
+              <button class="category-btn" data-category="services">
+                Services
+              </button>
+              <button class="category-btn" data-category="technical">
+                Technique
+              </button>
+              <button class="category-btn" data-category="security">
+                Sécurité
+              </button>
+              <button class="category-btn" data-category="pricing">
+                Tarification
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQ -->
+        <div class="faq-category active" id="general">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+              <div class="faq-icon">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <h2 class="faq-category-title">Questions Générales</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+              <div class="accordion faq-accordion" id="accordionGeneral">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="false"
+                      aria-controls="collapseOne"
+                    >
+                      Qu'est-ce qu'Infra Salama et quels services proposez-vous?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionGeneral"
+                  >
+                    <div class="accordion-body">
+                      Infra Salama est une entreprise algérienne spécialisée
+                      dans les infrastructures informatiques. Nous proposons une
+                      gamme complète de services incluant la conception et
+                      l'implémentation de réseaux informatiques, la sécurité
+                      informatique, les solutions de serveurs et de stockage,
+                      les solutions cloud, et la communication unifiée. Notre
+                      objectif est de fournir des infrastructures informatiques
+                      fiables, sécurisées et performantes pour les entreprises
+                      de toutes tailles.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Comment Infra Salama se distingue-t-elle de ses
+                      concurrents?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionGeneral"
+                  >
+                    <div class="accordion-body">
+                      Infra Salama se distingue par son expertise technique
+                      approfondie, son approche personnalisée, et son engagement
+                      envers la satisfaction client. Nous sommes une entreprise
+                      100% algérienne qui comprend les défis spécifiques du
+                      marché local. Notre équipe est composée d'experts
+                      certifiés dans diverses technologies, et nous proposons
+                      des solutions sur mesure adaptées aux besoins spécifiques
+                      de chaque client. De plus, nous offrons un support
+                      technique continu et réactif pour assurer le bon
+                      fonctionnement de vos infrastructures.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Quelles sont les certifications et partenariats d'Infra
+                      Salama?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionGeneral"
+                  >
+                    <div class="accordion-body">
+                      Infra Salama dispose de nombreuses certifications dans le
+                      domaine des infrastructures informatiques. Notre équipe
+                      comprend des professionnels certifiés Cisco (CCNA, CCNP,
+                      CCIE), Microsoft (MCSA, MCSE), VMware (VCP), et en
+                      cybersécurité (CISSP, CEH). Nous sommes partenaires
+                      officiels de grandes marques technologiques comme Cisco,
+                      Microsoft, HP, Dell, VMware, et Fortinet, ce qui nous
+                      permet d'offrir des solutions de pointe et de bénéficier
+                      d'un support direct des fabricants.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services FAQ -->
+        <div class="faq-category" id="services">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+              <div class="faq-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h2 class="faq-category-title">Questions sur nos Services</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+              <div class="accordion faq-accordion" id="accordionServices">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Quels types de réseaux informatiques pouvez-vous mettre en
+                      place?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#accordionServices"
+                  >
+                    <div class="accordion-body">
+                      Nous concevons et implémentons tous types de réseaux
+                      informatiques, des réseaux locaux (LAN) aux réseaux
+                      étendus (WAN), en passant par les réseaux sans fil (WLAN)
+                      et les réseaux privés virtuels (VPN). Nous proposons des
+                      solutions adaptées à la taille et aux besoins de votre
+                      entreprise, qu'il s'agisse d'une petite structure ou d'une
+                      grande organisation avec plusieurs sites. Nos solutions
+                      incluent la conception de l'architecture réseau,
+                      l'installation et la configuration des équipements, ainsi
+                      que la maintenance et le support continu.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                    >
+                      Quelles solutions de sécurité informatique proposez-vous?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="#accordionServices"
+                  >
+                    <div class="accordion-body">
+                      Nous offrons une gamme complète de solutions de sécurité
+                      informatique, incluant les pare-feu de nouvelle
+                      génération, les systèmes de détection et de prévention
+                      d'intrusion (IDS/IPS), les solutions antivirus et
+                      anti-malware, la sécurisation des points d'accès, la
+                      gestion des identités et des accès, et les solutions de
+                      chiffrement. Nous proposons également des services d'audit
+                      de sécurité, des tests de pénétration, et la mise en place
+                      de politiques de sécurité adaptées à votre entreprise.
+                      Notre approche de la sécurité est globale et proactive,
+                      visant à protéger vos données et vos systèmes contre les
+                      menaces actuelles et futures.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSix"
+                      aria-expanded="false"
+                      aria-controls="collapseSix"
+                    >
+                      Comment fonctionnent vos services de cloud computing?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingSix"
+                    data-bs-parent="#accordionServices"
+                  >
+                    <div class="accordion-body">
+                      Nos services de cloud computing comprennent la mise en
+                      place de clouds privés, publics ou hybrides selon vos
+                      besoins. Nous vous aidons à migrer vos applications et
+                      données vers le cloud de manière sécurisée et efficace.
+                      Nos solutions incluent l'Infrastructure as a Service
+                      (IaaS), le Platform as a Service (PaaS), et le Software as
+                      a Service (SaaS). Nous travaillons avec les principaux
+                      fournisseurs de cloud comme AWS, Microsoft Azure et Google
+                      Cloud, tout en proposant également des solutions de cloud
+                      privé sur site. Notre équipe vous accompagne dans toutes
+                      les étapes, de la planification à la migration, en passant
+                      par l'optimisation et la gestion continue de votre
+                      infrastructure cloud.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical FAQ -->
+        <div class="faq-category" id="technical">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+              <div class="faq-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h2 class="faq-category-title">Questions Techniques</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+              <div class="accordion faq-accordion" id="accordionTechnical">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="collapseSeven"
+                    >
+                      Comment assurez-vous la continuité des services
+                      informatiques?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingSeven"
+                    data-bs-parent="#accordionTechnical"
+                  >
+                    <div class="accordion-body">
+                      Nous mettons en place des solutions de haute disponibilité
+                      et de reprise après sinistre pour assurer la continuité de
+                      vos services informatiques. Cela inclut la redondance des
+                      équipements critiques, la réplication des données, les
+                      systèmes de sauvegarde automatisés, et les plans de
+                      reprise d'activité. Nous effectuons également une
+                      surveillance proactive de vos systèmes pour détecter et
+                      résoudre les problèmes avant qu'ils n'affectent vos
+                      opérations. Notre équipe de support technique est
+                      disponible 24/7 pour intervenir rapidement en cas
+                      d'incident et minimiser les temps d'arrêt.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseEight"
+                      aria-expanded="false"
+                      aria-controls="collapseEight"
+                    >
+                      Quelles technologies utilisez-vous pour vos solutions de
+                      virtualisation?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingEight"
+                    data-bs-parent="#accordionTechnical"
+                  >
+                    <div class="accordion-body">
+                      Nous utilisons les technologies de virtualisation leaders
+                      du marché, notamment VMware vSphere, Microsoft Hyper-V, et
+                      KVM. Notre expertise couvre la virtualisation des
+                      serveurs, des postes de travail, des applications et des
+                      réseaux. Nous concevons des infrastructures virtualisées
+                      optimisées pour vos besoins spécifiques, en tenant compte
+                      de la performance, de la disponibilité et de la sécurité.
+                      Nos solutions de virtualisation permettent de réduire les
+                      coûts d'infrastructure, d'améliorer l'agilité de votre IT,
+                      et de simplifier la gestion de vos ressources
+                      informatiques.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseNine"
+                      aria-expanded="false"
+                      aria-controls="collapseNine"
+                    >
+                      Comment gérez-vous la compatibilité avec les systèmes
+                      existants?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingNine"
+                    data-bs-parent="#accordionTechnical"
+                  >
+                    <div class="accordion-body">
+                      Nous commençons par une analyse approfondie de votre
+                      infrastructure existante pour comprendre ses composants et
+                      ses interdépendances. Nous concevons ensuite des solutions
+                      qui s'intègrent harmonieusement avec vos systèmes actuels,
+                      en utilisant des standards ouverts et des interfaces de
+                      programmation (API) lorsque c'est possible. Pour les
+                      systèmes plus anciens, nous pouvons mettre en place des
+                      passerelles ou des couches d'abstraction pour faciliter
+                      l'intégration. Notre approche progressive de la
+                      modernisation permet de minimiser les perturbations tout
+                      en vous aidant à évoluer vers des technologies plus
+                      récentes et plus performantes.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security FAQ -->
+        <div class="faq-category" id="security">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+              <div class="faq-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h2 class="faq-category-title">Questions sur la Sécurité</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+              <div class="accordion faq-accordion" id="accordionSecurity">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTen"
+                      aria-expanded="false"
+                      aria-controls="collapseTen"
+                    >
+                      Comment protégez-vous les données sensibles de vos
+                      clients?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTen"
+                    data-bs-parent="#accordionSecurity"
+                  >
+                    <div class="accordion-body">
+                      Nous mettons en œuvre plusieurs niveaux de protection pour
+                      les données sensibles, incluant le chiffrement des données
+                      au repos et en transit, le contrôle d'accès basé sur les
+                      rôles, l'authentification multifacteur, et la segmentation
+                      des réseaux. Nous suivons les meilleures pratiques de
+                      l'industrie et les réglementations en matière de
+                      protection des données. Nos solutions de sécurité sont
+                      régulièrement mises à jour pour faire face aux nouvelles
+                      menaces. De plus, nous formons votre personnel aux bonnes
+                      pratiques de sécurité pour réduire les risques liés au
+                      facteur humain.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingEleven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseEleven"
+                      aria-expanded="false"
+                      aria-controls="collapseEleven"
+                    >
+                      Comment gérez-vous les incidents de sécurité?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseEleven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingEleven"
+                    data-bs-parent="#accordionSecurity"
+                  >
+                    <div class="accordion-body">
+                      Nous avons mis en place un processus complet de gestion
+                      des incidents de sécurité qui comprend la détection,
+                      l'analyse, l'endiguement, l'éradication, la récupération
+                      et l'apprentissage. Notre équipe de réponse aux incidents
+                      est formée pour réagir rapidement et efficacement à tout
+                      type de menace. Nous utilisons des outils avancés de
+                      détection et d'analyse pour identifier les incidents et
+                      évaluer leur impact. Après chaque incident, nous
+                      effectuons une analyse post-mortem pour comprendre les
+                      causes profondes et améliorer nos défenses. Nous vous
+                      tenons informés tout au long du processus et vous
+                      fournissons des recommandations pour renforcer votre
+                      posture de sécurité.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwelve">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwelve"
+                      aria-expanded="false"
+                      aria-controls="collapseTwelve"
+                    >
+                      Proposez-vous des formations en sécurité informatique pour
+                      les employés?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwelve"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwelve"
+                    data-bs-parent="#accordionSecurity"
+                  >
+                    <div class="accordion-body">
+                      Oui, nous proposons des formations en sécurité
+                      informatique adaptées à différents niveaux de
+                      connaissances techniques. Ces formations couvrent des
+                      sujets comme la sensibilisation aux menaces courantes, la
+                      gestion des mots de passe, la reconnaissance des
+                      tentatives de phishing, la sécurité des appareils mobiles,
+                      et les bonnes pratiques de sécurité au quotidien. Nous
+                      personnalisons nos programmes de formation selon les
+                      besoins spécifiques de votre entreprise et les rôles de
+                      vos employés. La formation régulière de votre personnel
+                      est un élément essentiel de votre stratégie de sécurité
+                      globale, car les utilisateurs sont souvent la première
+                      ligne de défense contre les cyberattaques.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing FAQ -->
+        <div class="faq-category" id="pricing">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+              <div class="faq-icon">
+                <i class="fas fa-tags"></i>
+              </div>
+              <h2 class="faq-category-title">Questions sur la Tarification</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+              <div class="accordion faq-accordion" id="accordionPricing">
+                <!-- Question 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThirteen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThirteen"
+                      aria-expanded="false"
+                      aria-controls="collapseThirteen"
+                    >
+                      Comment sont structurés vos tarifs?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThirteen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThirteen"
+                    data-bs-parent="#accordionPricing"
+                  >
+                    <div class="accordion-body">
+                      Nos tarifs sont structurés de manière transparente et
+                      flexible pour s'adapter à vos besoins spécifiques. Nous
+                      proposons plusieurs modèles de tarification, incluant des
+                      projets à prix fixe, des contrats de service mensuels ou
+                      annuels, et des tarifs horaires pour les interventions
+                      ponctuelles. Pour les projets d'infrastructure, le coût
+                      dépend de la complexité, de l'échelle et des technologies
+                      utilisées. Pour les services managés, nous offrons
+                      différents niveaux de support avec des tarifs adaptés à
+                      chaque niveau. Nous vous fournissons toujours un devis
+                      détaillé avant de commencer tout travail, sans frais
+                      cachés.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFourteen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFourteen"
+                      aria-expanded="false"
+                      aria-controls="collapseFourteen"
+                    >
+                      Proposez-vous des contrats de maintenance?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFourteen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFourteen"
+                    data-bs-parent="#accordionPricing"
+                  >
+                    <div class="accordion-body">
+                      Oui, nous proposons différents types de contrats de
+                      maintenance pour assurer le bon fonctionnement de votre
+                      infrastructure informatique. Nos contrats incluent la
+                      surveillance proactive, la maintenance préventive, les
+                      mises à jour régulières, et le support technique. Nous
+                      offrons plusieurs niveaux de service avec des temps de
+                      réponse garantis adaptés à la criticité de vos systèmes.
+                      Nos contrats de maintenance peuvent être personnalisés
+                      pour couvrir spécifiquement les équipements et services
+                      que vous souhaitez, vous permettant ainsi d'optimiser
+                      votre budget tout en bénéficiant d'un support de qualité.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFifteen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFifteen"
+                      aria-expanded="false"
+                      aria-controls="collapseFifteen"
+                    >
+                      Y a-t-il des coûts supplémentaires à prévoir?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFifteen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFifteen"
+                    data-bs-parent="#accordionPricing"
+                  >
+                    <div class="accordion-body">
+                      Nous nous efforçons d'être totalement transparents
+                      concernant les coûts. Notre devis initial comprend tous
+                      les coûts prévisibles liés à votre projet ou service.
+                      Cependant, certains facteurs peuvent entraîner des coûts
+                      supplémentaires, comme des changements significatifs dans
+                      la portée du projet, des demandes de fonctionnalités
+                      additionnelles, ou des problèmes imprévus découverts
+                      pendant l'implémentation. Dans tous les cas, nous vous
+                      informons et obtenons votre approbation avant d'engager
+                      des coûts supplémentaires. Pour les services continus,
+                      nous vous fournissons des rapports réguliers sur
+                      l'utilisation et les coûts associés.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Contact Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up">
+            <div class="faq-contact">
+              <h2>Vous n'avez pas trouvé votre réponse?</h2>
+              <p>
+                Notre équipe est prête à répondre à toutes vos questions et à
+                vous aider à trouver la solution adaptée à vos besoins.
+              </p>
+              <div>
+                <a href="contact.php" class="btn btn-light btn-lg me-3"
+                  >Contactez-nous</a
+                >
+                <a href="devis.html" class="btn btn-light-outline btn-lg"
+                  >Demander un Devis</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <img
+              src="img/logo-white.png"
+              alt="Infra Salama Logo"
+              class="footer-logo mb-3"
+            />
+            <p>
+              Infra Salama est votre partenaire de confiance pour tous vos
+              besoins en infrastructure informatique. Nous offrons des solutions
+              innovantes et sécurisées pour les entreprises de toutes tailles.
+            </p>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Liens Rapides</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Nos Services</a></li>
+              <li><a href="realisations.html">Réalisations</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5>Nos Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html#reseaux">Réseaux Informatiques</a></li>
+              <li>
+                <a href="services.html#securite">Sécurité Informatique</a>
+              </li>
+              <li><a href="services.html#serveurs">Serveurs & Stockage</a></li>
+              <li><a href="services.html#cloud">Solutions Cloud</a></li>
+              <li>
+                <a href="services.html#communication">Communication Unifiée</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-4 col-md-6">
+            <h5>Contactez-nous</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Rue des
+                Infrastructures, Alger, Algérie
+              </li>
+              <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+              <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+              <li>
+                <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="algerian-company">Entreprise 100% Algérienne</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- FAQ Page Specific JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: true,
+        });
+
+        // Category filtering
+        const categoryBtns = document.querySelectorAll(".category-btn");
+        const faqCategories = document.querySelectorAll(".faq-category");
+
+        categoryBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons
+            categoryBtns.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const category = this.getAttribute("data-category");
+
+            if (category === "all") {
+              // Show general category and hide others
+              faqCategories.forEach((cat, index) => {
+                if (index === 0) {
+                  cat.classList.add("active");
+                } else {
+                  cat.classList.remove("active");
+                }
+              });
+            } else {
+              // Hide all categories
+              faqCategories.forEach((cat) => cat.classList.remove("active"));
+              // Show selected category
+              document.getElementById(category).classList.add("active");
+            }
+          });
+        });
+
+        // FAQ Search functionality
+        const searchInput = document.getElementById("faqSearch");
+        const searchBtn = document.getElementById("searchBtn");
+        const accordionItems = document.querySelectorAll(".accordion-item");
+
+        function performSearch() {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          if (searchTerm.length < 3) {
+            // Reset all items if search term is too short
+            accordionItems.forEach((item) => {
+              item.style.display = "block";
+            });
+            return;
+          }
+
+          // Show all categories for searching
+          faqCategories.forEach((cat) => cat.classList.add("active"));
+
+          // Filter accordion items
+          accordionItems.forEach((item) => {
+            const question = item
+              .querySelector(".accordion-button")
+              .textContent.toLowerCase();
+            const answer = item
+              .querySelector(".accordion-body")
+              .textContent.toLowerCase();
+
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              item.style.display = "block";
+              // Expand the item
+              const collapseElement = item.querySelector(".accordion-collapse");
+              const button = item.querySelector(".accordion-button");
+              collapseElement.classList.add("show");
+              button.classList.remove("collapsed");
+              button.setAttribute("aria-expanded", "true");
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          // Reset category buttons
+          categoryBtns.forEach((btn) => btn.classList.remove("active"));
+          categoryBtns[0].classList.add("active");
+        }
+
+        searchBtn.addEventListener("click", performSearch);
+        searchInput.addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            performSearch();
+          }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

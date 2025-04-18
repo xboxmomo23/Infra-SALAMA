@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titre de l'Article - Blog Infra Salama</title>
+  <meta
+    name="description"
+    content="Description de l'article pour le référencement" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Prism Syntax Highlighting -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+    rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/article.css" />
+
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../img/logoInfraSalama.png" alt="Infra Salama Logo" height="50" /> Infra Salama
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../services.html">Nos Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../recrutement.html">Recrutement</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../blog.html">Blog / Conseils</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../devis.html">Demander un Devis</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article Banner -->
+  <section class="article-banner">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <a href="../blog.html" class="back-to-blog"><i class="fas fa-arrow-left"></i> Retour au blog</a>
+          <span class="article-category">Réseaux</span>
+          <h1>
+            Pourquoi votre établissement a besoin d'un réseau bien structuré
+            (et pas juste d'un routeur)
+          </h1>
+          <div class="article-meta">
+            <div class="article-meta-item">
+              <i class="far fa-calendar-alt"></i>
+              <span>15 avril 2025</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-user"></i>
+              <span>Par Nadir DJEDIDEN</span>
+            </div>
+            <div class="article-meta-item">
+              <i class="far fa-clock"></i>
+              <span>Temps de lecture: 4 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8" data-aos="fade-up">
+          <article class="article-content">
+            <p>
+              De nombreuses écoles, universités et mairies pensent qu'un
+              simple routeur wifi suffit pour répondre à leurs besoins
+              informatiques. Cette vision simpliste peut cependant engendrer
+              de sérieux problèmes de performance, de sécurité et de
+              fiabilité.
+            </p>
+
+            <p>
+              Dans cet article, nous expliquons pourquoi une infrastructure
+              réseau professionnelle est indispensable pour les institutions
+              publiques modernes, même avec des budgets limités.
+            </p>
+
+            <img
+              src="../img/infrareseaumoderne.jpg"
+              alt="Infrastructure réseau moderne"
+              class="img-fluid" />
+            <p class="article-image-caption">
+              Une salle serveur bien organisée est la base d'un réseau
+              performant et fiable
+            </p>
+
+            <h2 id="section1">1. VLAN pour séparer les usages</h2>
+            <p>
+              Dans un établissement scolaire ou une mairie, différents types
+              d'utilisateurs coexistent : administration, enseignants, élèves,
+              visiteurs. Un réseau homogène expose les données sensibles à
+              tous les utilisateurs.
+            </p>
+
+            <p>
+              Les VLANs (réseaux locaux virtuels) permettent de créer
+              plusieurs réseaux logiques indépendants sur la même
+              infrastructure physique. C'est comme avoir plusieurs maisons
+              séparées par des murs solides, plutôt qu'un grand espace ouvert
+              sans intimité.
+            </p>
+
+            <div class="note-box">
+              <div class="box-title">
+                <i class="fas fa-info-circle"></i> À noter
+              </div>
+              <p>
+                La segmentation en VLANs n'est pas qu'une question de
+                sécurité, c'est aussi une question de performance. Elle permet
+                de contenir le trafic broadcast et d'optimiser l'utilisation
+                de la bande passante.
+              </p>
+            </div>
+
+            <p>
+              <strong>Configuration typique de VLANs pour un établissement scolaire
+                :</strong>
+            </p>
+            <ul>
+              <li>
+                VLAN Administration : pour la direction et le personnel
+                administratif (accès aux données sensibles)
+              </li>
+              <li>
+                VLAN Enseignants : pour le corps enseignant (accès aux
+                ressources pédagogiques)
+              </li>
+              <li>
+                VLAN Étudiants : pour les postes destinés aux élèves (accès
+                internet filtré)
+              </li>
+              <li>
+                VLAN Invités : pour les visiteurs (accès internet uniquement)
+              </li>
+              <li>
+                VLAN IoT/Surveillance : pour les caméras, contrôles d'accès et
+                autres équipements connectés
+              </li>
+            </ul>
+
+            <h2 id="section2">2. Switchs managés pour un contrôle précis</h2>
+            <p>
+              Contrairement aux switchs "plug and play" basiques, les switchs
+              managés offrent un contrôle granulaire sur votre réseau. Ils
+              permettent de configurer les VLANs, de surveiller le trafic, de
+              gérer la qualité de service (QoS) et d'identifier les problèmes
+              potentiels.
+            </p>
+
+            <div class="tip-box">
+              <div class="box-title">
+                <i class="fas fa-lightbulb"></i> Conseil
+              </div>
+              <p>
+                Pour les établissements à budget limité, des switchs managés
+                d'entrée de gamme comme les Cisco SG350 ou les TP-Link T1600G
+                offrent un excellent rapport qualité-prix et la plupart des
+                fonctionnalités essentielles.
+              </p>
+            </div>
+
+            <p><strong>Avantages des switchs managés :</strong></p>
+            <ul>
+              <li>
+                Configuration des VLANs pour isoler les différents types de
+                trafic
+              </li>
+              <li>
+                Contrôle de la bande passante pour prioriser les applications
+                critiques
+              </li>
+              <li>
+                Détection des boucles réseau qui peuvent paralyser votre
+                infrastructure
+              </li>
+              <li>
+                Surveillance du trafic pour identifier les anomalies ou les
+                surcharges
+              </li>
+              <li>Sécurité renforcée par l'authentification 802.1X</li>
+            </ul>
+
+            <h2 id="section3">3. Connexion stable et rapide pour tous</h2>
+            <p>
+              Un réseau mal conçu conduit inévitablement à des problèmes de
+              connexion intermittente, des débits insuffisants et des
+              frustrations quotidiennes. La multiplication des appareils
+              connectés dans les établissements (ordinateurs, tablettes,
+              téléphones, objets connectés) nécessite une infrastructure
+              capable d'absorber cette charge.
+            </p>
+
+            <p>
+              <strong>Les points critiques d'un réseau performant :</strong>
+            </p>
+            <ul>
+              <li>
+                Câblage structuré : idéalement en catégorie 6a ou supérieure
+                pour supporter les évolutions futures
+              </li>
+              <li>
+                Backbone Gigabit ou 10 Gigabit entre les équipements centraux
+              </li>
+              <li>
+                Couverture WiFi professionnelle avec points d'accès redondants
+              </li>
+              <li>
+                Qualité de Service (QoS) pour prioriser les applications
+                critiques
+              </li>
+              <li>
+                Équilibrage de charge pour répartir le trafic efficacement
+              </li>
+            </ul>
+
+            <h2 id="section4">4. Surveillance réseau (monitoring)</h2>
+            <p>
+              Sans outils de surveillance, vous ne pouvez pas gérer
+              efficacement votre réseau. C'est comme conduire les yeux bandés.
+              Le monitoring permet de détecter les problèmes avant qu'ils
+              n'affectent les utilisateurs et d'optimiser les performances.
+            </p>
+
+            <div class="warning-box">
+              <div class="box-title">
+                <i class="fas fa-exclamation-triangle"></i> Attention
+              </div>
+              <p>
+                Sans monitoring réseau, 60% des incidents ne sont découverts
+                qu'après signalement par les utilisateurs, souvent trop tard
+                pour une intervention proactive.
+              </p>
+            </div>
+
+            <p><strong>Ce que permet la surveillance réseau :</strong></p>
+            <ul>
+              <li>Détection des équipements défaillants ou surchargés</li>
+              <li>Identification des goulots d'étranglement</li>
+              <li>
+                Analyse des tendances d'utilisation pour planifier les
+                évolutions
+              </li>
+              <li>Alertes en temps réel en cas d'incident</li>
+              <li>Reporting pour justifier les investissements IT</li>
+            </ul>
+
+            <h2 id="section5">Cas concret : L'Université de Tlemcen</h2>
+            <p>
+              L'Université de Tlemcen a transformé son infrastructure réseau
+              en 2022, passant d'une solution hétérogène de routeurs consumer
+              à une infrastructure professionnelle structurée. Les résultats
+              ont été spectaculaires :
+            </p>
+
+            <ul>
+              <li>Réduction de 95% des incidents de connectivité</li>
+              <li>Augmentation de la vitesse moyenne de connexion de 400%</li>
+              <li>
+                Possibilité de tenir des cours en visioconférence sans
+                interruption
+              </li>
+              <li>
+                Sécurisation des données administratives et pédagogiques
+              </li>
+              <li>Économies sur la maintenance à long terme</li>
+            </ul>
+
+            <h2 id="section6">Conclusion</h2>
+            <p>
+              Un réseau bien structuré n'est pas un luxe, mais un
+              investissement rentable qui améliore l'efficacité de votre
+              établissement tout en réduisant les coûts de maintenance à long
+              terme. Les perturbations causées par un réseau défaillant ont un
+              impact direct sur la productivité du personnel et la qualité de
+              l'enseignement.
+            </p>
+
+            <p>
+              Chez Infra Salama, nous concevons des infrastructures réseau
+              adaptées aux contraintes spécifiques des institutions publiques
+              algériennes. Notre approche est pragmatique et tient compte de
+              vos contraintes budgétaires, tout en vous offrant une solution
+              évolutive qui répondra à vos besoins actuels et futurs.
+            </p>
+
+            <p>
+              Contactez-nous pour une étude gratuite de votre infrastructure
+              actuelle et des recommandations sur mesure.
+            </p>
+
+            <!-- Article Share -->
+            <div class="article-share">
+              <h4>Partagez cet article</h4>
+              <div class="share-buttons">
+                <a href="#" class="share-button facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-button twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-button linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <!-- Author Info -->
+            <!-- <div class="article-author">
+                <div class="author-avatar">
+                  <img
+                    src="/placeholder.svg?height=200&width=200"
+                    alt="Nadir DJEDIDEN"
+                  />
+                </div>
+                <div class="author-info">
+                  <h4>Nadir DJEDIDEN</h4>
+                  <p>
+                    Expert en Administration systèmes, Réseau et cybersécurité avec plus de 5 ans d'expérience
+                    dans la protection des infrastructures critiques. nADIR est
+                    certifié CCNA et comptIA security+, et conseille régulièrement les
+                    entreprises sur les meilleures pratiques de sécurité.
+                  </p>
+                  <div class="author-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                  </div>
+                </div>
+              </div> -->
+          </article>
+
+
+          <!-- Comment Form -->
+          <!-- <div class="comment-form">
+              <h3>Laisser un commentaire</h3>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Votre nom *"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Votre email *"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      placeholder="Votre commentaire *"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                      Publier le commentaire
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div> -->
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 article-sidebar">
+          <!-- Table of Contents -->
+          <div class="article-table-of-contents" data-aos="fade-up">
+            <h4><i class="fas fa-list"></i> Sommaire</h4>
+            <ul id="tableOfContents">
+              <li>
+                <a href="#section1" class="active">1. VLAN pour séparer les usages</a>
+              </li>
+              <li>
+                <a href="#section2">2. Switchs managés pour un contrôle précis</a>
+              </li>
+              <li>
+                <a href="#section3">3. Connexion stable et rapide pour tous</a>
+              </li>
+              <li>
+                <a href="#section4">4. Surveillance réseau (monitoring)</a>
+              </li>
+              <li>
+                <a href="#section5">5. Cas concret : L'Université de Tlemcen</a>
+              </li>
+              <li>
+                <a href="#section6">6. Conclusion</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Related Articles -->
+          <!-- <div class="related-articles" data-aos="fade-up">
+              <h3>Articles similaires</h3>
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <div class="related-article-card">
+                    <div class="related-article-img">
+                      <img
+                        src="/placeholder.svg?height=200&width=400"
+                        alt="Protection contre les ransomwares"
+                      />
+                    </div>
+                    <div class="related-article-content">
+                      <div class="related-article-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>18 Mars 2023</span>
+                      </div>
+                      <h4 class="related-article-title">
+                        Protection contre les ransomwares : guide complet pour
+                        les entreprises
+                      </h4>
+                      <a href="#" class="blog-link"
+                        >Lire l'article <i class="fas fa-arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10" data-aos="fade-up">
+          <div class="cta-section">
+            <div class="row align-items-center">
+              <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2>Besoin d'un audit de sécurité ?</h2>
+                <p>
+                  Contactez nos experts pour évaluer la sécurité de votre
+                  infrastructure IT et identifier les vulnérabilités
+                  potentielles.
+                </p>
+              </div>
+              <div class="col-lg-4 text-lg-end">
+                <a href="../contact.html" class="btn btn-light btn-lg">Contactez-nous</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Company Info -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img
+            src="img/logo-white.png"
+            alt="Infra Salama Logo"
+            class="footer-logo mb-3" />
+          <p>
+            Infra Salama est votre partenaire de confiance pour tous vos
+            besoins en infrastructure informatique. Nous offrons des solutions
+            innovantes et sécurisées pour les entreprises de toutes tailles.
+          </p>
+          <div class="social-links mt-3">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Liens Rapides</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../services.html">Nos Services</a></li>
+            <li><a href="../recrutement.html">Réalisations</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../devis.html">Devis</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h5>Nos Services</h5>
+          <ul class="footer-links">
+            <li><a href="../services.html#reseaux">Réseaux Informatiques</a></li>
+            <li>
+              <a href="../services.html#securite">Sécurité Informatique</a>
+            </li>
+            <li><a href="../services.html#serveurs">Serveurs & Stockage</a></li>
+            <li><a href="../services.html#cloud">Solutions Cloud</a></li>
+            <li>
+              <a href="../services.html#communication">Communication Unifiée</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h5>Contactez-nous</h5>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Rue des
+              Infrastructures, Alger, Algérie
+            </li>
+            <li><i class="fas fa-phone"></i> +213 XX XX XX XX</li>
+            <li><i class="fas fa-envelope"></i> contact@infrasalama.dz</li>
+            <li>
+              <i class="fas fa-clock"></i> Lun-Ven: 9h-17h | Sam: 9h-13h
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="copyright">© 2023 Infra Salama. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="algerian-company">Entreprise 100% Algérienne</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Prism Syntax Highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="../js/script.js"></script>
+
+  <!-- Article Page Specific JavaScript -->
+  <script src="../js/article.js"></script>
+</body>
+
+</html>
