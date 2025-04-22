@@ -686,6 +686,119 @@ a:hover {
   color: var(--white-color);
 }
 
+
+/* Styles pour la section Services */
+    .service-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-bottom: 4px solid transparent;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-bottom: 4px solid #0056b3;
+    }
+    
+    .service-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(0, 86, 179, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon {
+        background-color: #0056b3;
+    }
+    
+    .service-icon i {
+        font-size: 32px;
+        color: #0056b3;
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon i {
+        color: #fff;
+    }
+    
+    .service-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .service-description {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    /* Styles pour la section Vision */
+    .vision-section {
+        background-color: #f8f9fa;
+    }
+    
+    .vision-content {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 50px 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .vision-content h2 {
+        color: #0056b3;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .vision-content h2:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #0056b3;
+    }
+    
+    .vision-text {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .vision-text .lead {
+        color: #444;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    
+    @media (max-width: 767px) {
+        .service-card {
+            margin-bottom: 30px;
+        }
+        
+        .vision-content {
+            padding: 30px 20px;
+        }
+        
+        .vision-text .lead {
+            font-size: 1.1rem;
+        }
+    }
+
+
+
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 991.98px) {
   .navbar {
