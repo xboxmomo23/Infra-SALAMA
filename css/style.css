@@ -350,6 +350,126 @@ a:hover {
   border-bottom: none;
 }
 
+
+
+
+/*  section solutions equipements tablettes, pc, donview */
+
+
+/* Fourniture de Matériel Section */
+.material-supply-section {
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.material-supply-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/pattern-bg.png');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.material-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.material-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.material-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--bs-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.material-icon i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.material-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--bs-primary);
+}
+
+.material-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.material-features li {
+  padding: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.material-features li:last-child {
+  border-bottom: none;
+}
+
+.material-features li i {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.material-features li span {
+  margin-left: 10px;
+}
+
+.material-image {
+  margin-top: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.material-image img {
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.material-card:hover .material-image img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991.98px) {
+  .material-card {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+/*  fin section  */
+
+
+
+
+
+
+
 /* ===== CTA SECTION ===== */
 .cta-section {
   background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
